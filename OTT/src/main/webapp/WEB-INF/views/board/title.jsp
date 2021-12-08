@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><a href="/board/title">자유/공유 게시판</a></h1>
+<h4><a href="/board/title">자유/공유 게시판</a></h4>
+<h4><a href="/review/title">추천/리뷰 게시판</a></h4>
 <!-- jQuery -->
 <script src="/resources/vendor/jquery/jquery.min.js"></script>
 
