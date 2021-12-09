@@ -12,6 +12,7 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import ott.dla.domain.Criteria;
 import ott.dla.domain.ReplyVO;
+import ott.dla.domain.ReviewReplyVO;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -53,6 +54,14 @@ public class ReplyMapperTests {
 		
 		
 	}
+	
+	@Test
+	public void testList2() {
+		Criteria cri = new Criteria(2, 10);
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 231L);
+		replies.forEach(reply -> log.info(reply));
+	}
+	
 	
 	
 	

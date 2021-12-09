@@ -32,6 +32,7 @@ public interface ReplyMapper {
 			@Param("cri") Criteria cri,
 			@Param("bno") Long bno); //.xml의 #{bno}와 매칭
 	
-	
+	//댓글의 숫자 파악
+	public int getCountByBno(Long bno);
 	
 }
