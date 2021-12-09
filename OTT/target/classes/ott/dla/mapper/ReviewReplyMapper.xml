@@ -58,8 +58,7 @@
 		where rev_bno=#{rev_bno} order by rev_rno desc
 	</select>
 
-
-
+	<!-- 댓글 페이징처리 -->
 
 
 

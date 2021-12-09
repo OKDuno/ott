@@ -3,6 +3,7 @@ package ott.dla.service;
 import java.util.List;
 
 import ott.dla.domain.Criteria;
+import ott.dla.domain.ReplyPageDTO;
 import ott.dla.domain.ReplyVO;
 
 public interface ReplyService {
@@ -23,6 +24,10 @@ public interface ReplyService {
 	
 	//페이징
 	public List<ReplyVO> getList(Criteria cri, Long bno);
+	
+	//댓글 페이징
+	public ReplyPageDTO getListPage(Criteria cri, Long bno);
+	
 	
 	
 }

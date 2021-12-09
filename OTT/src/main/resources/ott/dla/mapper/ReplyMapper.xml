@@ -53,10 +53,10 @@
 
 
 	<!-- 댓글 가져오기 -->
-	<select id="getListWithPaging" resultType="ott.dla.domain.ReplyVO">
+<!-- 	<select id="getListWithPaging" resultType="ott.dla.domain.ReplyVO">
 		select rno, bno, reply, replyer, replydate from board_reply
 		where bno=#{bno} order by rno desc
-	</select>
+	</select> -->
 
 	<!-- 댓글 페이징처리 -->
 	<select id="getListWithPaging" resultType="ott.dla.domain.ReplyVO">
@@ -72,6 +72,13 @@
 		]]>
 	</select>
 
+	<!-- 댓글 숫자 파악 -->
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+		select count(rno) from board_reply where bno = #{bno}
+		]]>
+	</select>
+	
 
 
 

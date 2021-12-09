@@ -62,7 +62,10 @@ public class ReplyMapperTests {
 		replies.forEach(reply -> log.info(reply));
 	}
 	
-	
+	@Test
+	public void aa() {
+		System.out.println("xptmxm");
+	}
 	
 	
 }

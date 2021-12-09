@@ -8,10 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- 테스트 -->
-<!-- <link href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"> -->
-
-
 </head>
 <body>
 <!-- jQuery -->
@@ -43,7 +39,7 @@
 	<button data-oper="delete" class="btn btn-danger">삭제</button>
 	<button data-oper="title" class="btn btn-primary">목록</button>
 	
-<!-- 댓글 -->	
+<!-- 댓글 작성-->	
 <form name="replyForm" method="post">
   <input type="hidden" id="bno" name="bno" value="${board.bno}" />
   <input type="hidden" id="PageNum" name="PageNum" value="${cri.pageNum}"> 
@@ -59,13 +55,13 @@
  	 <button type="button" class="replyWriteBtn">작성</button>
   </div>
 </form>
+<!-- 댓글 작성 끝-->	
 
 
 
 
 
-
-<!-- 댓글 -->
+<!-- 댓글 페이지 -->
 <div id="reply">
   <ol class="replyList">
     <c:forEach items="${replyList}" var="replyList">
@@ -83,7 +79,7 @@
     </c:forEach>   
   </ol>
 </div>
-
+<!-- 댓글 페이지 끝-->
 
 
 <script type="text/javascript" src="/resources/js/reply.js"></script>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import ott.dla.domain.Criteria;
+import ott.dla.domain.ReplyPageDTO;
 import ott.dla.domain.ReplyVO;
 import ott.dla.mapper.ReplyMapper;
 
@@ -54,6 +55,15 @@ public class ReplyServiceImpl implements ReplyService {
 	public List<ReplyVO> getList(Criteria cri, Long bno) {
 		log.info("getList...." + bno);
 		return mapper.getListWithPaging(cri, bno);
+	}
+
+	
+	//댓글 페이징
+	@Override
+	public ReplyPageDTO getListPage(Criteria cri, Long bno) {
+		return new ReplyPageDTO(
+		mapper.getCountByBno(bno),
+		mapper.getListWithPaging(cri, bno));
 	}
 
 }
