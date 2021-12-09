@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.dla.domain.Criteria;
-import ott.dla.domain.ReplyPageDTO;
 import ott.dla.domain.ReplyVO;
 import ott.dla.service.ReplyService;
 
@@ -40,18 +39,6 @@ public class ReplyController {
 		return "redirect:/board/read";
 	}
 	
-	//댓글 페이징
-	@GetMapping(value = "/pages/{bno}/{page}",
-			produces = {MediaType.APPLICATION_XML_VALUE,
-						MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public ResponseEntity<ReplyPageDTO> getList(@PathVariable("page") int page,
-			@PathVariable("bno") Long bno){
-		Criteria cri = new Criteria(page,10);
-		log.info("get Reply List bno: "+bno);
-		log.info("cri:" + cri);;
-		
-		return new ResponseEntity<>(service.getListPage(cri, bno),HttpStatus.OK);
-	}
 	
 	
 	
