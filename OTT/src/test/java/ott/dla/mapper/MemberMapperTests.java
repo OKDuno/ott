@@ -39,12 +39,12 @@ public class MemberMapperTests {
 	
 	@Test
 	public void testMyMovie() {
-		log.info("........................."+mapper.getList("aa"));
+		log.info(mapper.getList("aa"));
 	}
 	
 	@Test
 	public void testMyboard(){
-		log.info("........................."+mapper.myReview("cc"));
+		log.info(mapper.myReview("cc"));
 	}
 	
 	

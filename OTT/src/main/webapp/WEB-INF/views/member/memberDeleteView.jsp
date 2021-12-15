@@ -16,7 +16,7 @@
 		$(document).ready(function(){
 			// 취소
 			$(".cencle").on("click", function(){
-				location.href = "/member/login";
+				location.href = "/member/myPageView";
 				alert("취소하였습니다.")
 			})
 		
