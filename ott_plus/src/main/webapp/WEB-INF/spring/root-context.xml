@@ -9,7 +9,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<mybatis-spring:scan base-package="org.zerock.mapper"></mybatis-spring:scan>
+	<mybatis-spring:scan base-package="ott.zerock.mapper"></mybatis-spring:scan>
 	
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 <!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> -->
@@ -30,5 +30,5 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	<context:component-scan base-package="org.zerock.service"></context:component-scan> 
+	<context:component-scan base-package="ott.zerock.service"></context:component-scan> 
 </beans>

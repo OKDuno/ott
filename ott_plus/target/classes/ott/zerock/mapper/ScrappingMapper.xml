@@ -1,1 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="ott.zerock.mapper.ScrappingMapper">
+
+	<insert id="input">
+		insert into viewtable (title, genre, actor, score) 
+		values (#{title}, #{genre}, #{actor}, #{score})
+	</insert>
+	
+	<select id="inputList" resultType="ott.zerock.domain.InputVO">
+		<![CDATA[
+			select * from viewtable
+		]]>
+	</select>
+	
+	<select id="getNmList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from netflix_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getNtList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from netflix_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getDmList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from disneyplus_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getDtList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from disneyplus_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getHmList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from hbo_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getHtList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from hbo_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getAmList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from amazon_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+	
+	<select id="getAtList" resultType="ott.zerock.domain.ScrappingVO">
+	
+		select * from amazon_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+	
+	</select>
+
+
+
+</mapper>
