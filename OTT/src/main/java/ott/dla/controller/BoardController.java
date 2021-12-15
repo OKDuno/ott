@@ -44,7 +44,7 @@ public class BoardController {
 		log.info("list: " + cri);
 		model.addAttribute("list",service.getList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri,service.count(cri)));
-
+		
 	}
 	
 	//�ۻ����ϱ�

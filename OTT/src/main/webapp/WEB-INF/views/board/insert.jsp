@@ -1,3 +1,4 @@
+<%@page import="ott.dla.domain.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,14 +21,6 @@
 		HBO<input type="radio" class="form-control" name="teg" value="HBO">
 		prime video<input type="radio" class="form-control" name="teg" value="prime video">
     </div>
-    
-<!--     <div class="form-group">
-        <label>OTT</label>
-		넥플릭스<input type="checkbox" class="form-control" name="ott" value="넥플릭스">
-		디즈니<input type="checkbox" class="form-control" name="ott" value="디즈니">
-		HBO<input type="checkbox" class="form-control" name="ott" value="HBO">
-		prime video<input type="checkbox" class="form-control" name="ott" value="prime video">
-    </div> -->
 
     <div class="form-group">
         <label>내용</label>
@@ -37,7 +30,7 @@
     <div class="form-group">
         <label>작성자</label>
         <input class="form-control" placeholder="작성자를 입력해주세요."
-        name="writer"> <!-- id 기본 value="$~~~.id" -->
+        name="writer" value= "${member.userId}" readonly="readonly">
     </div>
 
     <button type="submit" class="btn btn-default">작성</button>

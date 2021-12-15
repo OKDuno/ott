@@ -9,10 +9,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h4><a href="/board/title">자유/공유 게시판</a></h4>
-<h4><a href="/review/title">추천/리뷰 게시판</a></h4>
 <!-- jQuery -->
 <script src="/resources/vendor/jquery/jquery.min.js"></script>
+<!-- 로그인 테스트 -->
+<div>
+	<%@include file="nav.jsp" %>
+</div>
+<!-- 로그인 테스트 끝 -->
+
+
+
 
 <div>
 <form id="searchForm" action = "/board/title" method="get">
@@ -46,7 +52,9 @@
 	
 </thead>
 <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
+<c:if test="${member != null}">
 <button><a href="/board/insert">게시글 등록</a></button>
+</c:if>
 <tbody>
 
 	<c:forEach items="${list}" var="board">

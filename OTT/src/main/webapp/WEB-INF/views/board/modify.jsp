@@ -31,11 +31,6 @@
      <input class="form-control" value="${board.teg}"
     name="teg" >
 </div>
-<%-- <div class="form-group">
-    <label>ott</label>
-    <input class="form-control" value="${board.ott}"
-    name="teg" >
-</div> --%>
 <div class="form-group">
     <label>내용</label>
     <textarea class="form-control" rows="3"

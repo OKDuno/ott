@@ -29,7 +29,7 @@
     <div class="form-group">
         <label>작성자</label>
         <input class="form-control" placeholder="작성자를 입력해주세요."
-        name="rev_writer"> <!-- id 기본 value="$~~~.id" -->
+        name="rev_writer" value= "${member.userId}" readonly="readonly">
     </div>
 
     <button type="submit" class="btn btn-default">작성</button>

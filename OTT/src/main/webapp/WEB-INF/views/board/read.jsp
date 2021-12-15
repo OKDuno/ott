@@ -35,9 +35,11 @@
 <input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
 <input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
 </form>
-	<button data-oper="modify" class="btn btn-warning">수정</button>
-	<button data-oper="delete" class="btn btn-danger">삭제</button>
-	<button data-oper="title" class="btn btn-primary">목록</button>
+<c:if test="${member != null}">
+<button data-oper="modify" class="btn btn-warning">수정</button>
+<button data-oper="delete" class="btn btn-danger">삭제</button>
+</c:if>
+<button data-oper="title" class="btn btn-primary">목록</button>
 	
 <!-- 댓글 작성-->	
 <form name="replyForm" method="post">
@@ -46,13 +48,15 @@
   <input type="hidden" id="amount" name="amount" value="${cri.amount}"> 
 
   <div>
-    <label for="replyer">댓글 작성자</label><input type="text" id="replyer" name="replyer" />
-    <!-- id 기본 value="$~~~.id" -->
+    <label for="replyer">댓글 작성자</label><input type="text" id="replyer" name="replyer"
+    value= "${member.userId}" readonly="readonly" />
     <br/>
     <label for="repley">댓글 내용</label><input type="text" id="reply" name="reply" />
   </div>
   <div>
+  	<c:if test="${member != null}">
  	 <button type="button" class="replyWriteBtn">작성</button>
+ 	</c:if>
   </div>
 </form>
 <!-- 댓글 작성 끝-->	
@@ -72,8 +76,10 @@
         </p>
         <p>${replyList.reply}</p>
         <div>
+        <c:if test="${member != null}">
 		  <button type="button" class="replyUpdateBtn" data-rno="${replyList.rno}">수정</button>
 		  <button type="button" class="replyDeleteBtn" data-rno="${replyList.rno}">삭제</button>
+		</c:if>
 		</div>
       </li>
     </c:forEach>   
