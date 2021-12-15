@@ -9,17 +9,26 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<mybatis-spring:scan base-package="org.zerock.mapper"></mybatis-spring:scan>
+	<mybatis-spring:scan base-package="ott.zerock.mapper"></mybatis-spring:scan>
+	
+	<context:component-scan base-package="ott.zerock.service"></context:component-scan> 
 	
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 <!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> -->
 <!-- 		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"></property> -->
-		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
- 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.64:1521:xe"></property>
+<!-- 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property> -->
+<!--   		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.64:1521:xe"></property> -->
+		<!-- 임성재 DB -->
+ 		<property name="driverClassName"
+			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+		<property name="jdbcUrl"
+			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"/>
  		<!-- 리눅스 DB 서버 -->
 <!-- 	<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.21:1521:xe"></property> -->
-		<property name="username" value="ott"></property>
-		<property name="password" value="1234"></property>
+<!-- 		<property name="username" value="ott"></property>
+		<property name="password" value="1234"></property> -->
+		<property name="username" value="book_ex"/>
+		<property name="password" value="book_ex"/>
 	</bean>	
 	
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
@@ -30,5 +39,6 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	<context:component-scan base-package="org.zerock.service"></context:component-scan> 
+	
+	
 </beans>
