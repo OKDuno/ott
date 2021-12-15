@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ott.dla.mapper.ReplyMapper">
+
+
+	<!-- 댓글 등록 -->
+	<insert id="writeReply">
+	INSERT INTO board_reply(
+		BNO
+		, RNO
+		, reply
+		, replyer)
+	VALUES(#{bno}
+		, SEQ_REPLY.NEXTVAL
+		, #{reply}
+		, #{replyer})
+	</insert>
+
+	<!-- 댓글 조회 -->
+	<select id="readReply" resultType="ott.dla.domain.ReplyVO">
+		SELECT
+    		  RNO, reply, replyer, replydate
+    	 FROM board_reply
+    	WHERE BNO = #{bno}
+    	order by rno desc
+	</select>
+
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="ott.dla.domain.ReplyVO">
+		DELETE FROM board_reply
+		WHERE RNO = #{rno}
+	</delete>
+
+	<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="ott.dla.domain.ReplyVO">
+		UPDATE board_reply SET reply = #{reply}
+		WHERE RNO = #{rno}
+	</update>
+
+	<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="ott.dla.domain.ReplyVO">
+		SELECT
+				BNO
+			  , RNO
+			  , reply
+			  , replyer
+			  , replydate
+		  FROM board_reply
+		 WHERE RNO = #{rno}
+	</select>
+
+
+	<!-- 댓글 가져오기 -->
+ 	<select id="getListWithPaging" resultType="ott.dla.domain.ReplyVO">
+		select rno, bno, reply, replyer, replydate from board_reply
+		where bno=#{bno} order by rno desc
+	</select> 
+
+	<!-- 댓글 페이징처리 -->
+<!-- 	<select id="getListWithPaging" resultType="ott.dla.domain.ReplyVO">
+		<![CDATA[
+		select rno, bno, reply, replyer, replydate
+		from
+			(select /*+INDEX(board_reply idx_reply) */
+		    rownum rn, rno, bno, reply, replyer, replydate
+		    from board_reply
+		    where bno = #{bno} and rno > 0
+		    and rownum <= #{cri.pageNum} * #{cri.amount})
+		where rn > (#{cri.pageNum}-1) * #{cri.amount}
+		]]>
+	</select>
+
+	댓글 숫자 파악
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+		select count(rno) from board_reply where bno = #{bno}
+		]]>
+	</select> -->
+	
+
+
+
+</mapper>
