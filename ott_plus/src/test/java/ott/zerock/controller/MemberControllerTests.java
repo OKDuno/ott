@@ -52,9 +52,24 @@ public class MemberControllerTests {
 				.andReturn().getModelAndView().getViewName());
 	}
 	
+	//글 쓴 목록
+	@Test
+	public void testMyReview() throws Exception {
+		log.info(
+				mockMvc.perform(MockMvcRequestBuilders.get("/member/myReview")
+				.param("userId", "cc"))
+				.andReturn().getModelAndView().getModelMap());
+	}
 	
+	//등록한 영화
+	@Test
+	public void testMyMovie() throws Exception {
+		log.info("==============="+
+				mockMvc.perform(MockMvcRequestBuilders.get("/member/myMovie")
+				.param("userId", "aa"))
+				.andReturn().getModelAndView().getModelMap());
 	
-	
+	}
 	
 	
 	

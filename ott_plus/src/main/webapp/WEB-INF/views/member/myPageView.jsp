@@ -61,7 +61,7 @@
 				<button id="logoutBtn" type="button">로그아웃</button>
 				<button id="myReviewBtn" type="button">내가쓴글</button>
 				<button id="myMovieBtn" type="button">내가본작품</button>				
-				<input type="button" value="뒤로가기" onclick="history.back(-1);">
+				<button type="button" onclick="location.href='/ott/main'">뒤로가기</button>
 				<input type="hidden" value="${member.userId}" />
 			</div>
 		</c:if>

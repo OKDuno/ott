@@ -17,7 +17,7 @@
 	$(document).ready(function(){
 		//취소버튼
 		$(".cencle").on("click", function(){
-			location.href = "/"; //localhost 홈페이지로 이동
+			location.href = "/ott/main"; //localhost 홈페이지로 이동
 		})
 		//회원가입 버튼
 		$("#submit").on("click", function(){
