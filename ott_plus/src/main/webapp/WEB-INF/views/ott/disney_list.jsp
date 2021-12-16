@@ -73,14 +73,15 @@ Licence URI: https://www.os-templates.com/template-terms
           </li>
           <li><a class="drop" href="#">Table</a>
             <ul>
-              <li><a href="#">추천 / 리뷰</a></li>
-              <li><a href="#">공유 / 자유</a></li>
+              <li><a href="/review/title">추천 / 리뷰</a></li>
+              <li><a href="/board/title">공유 / 자유</a></li>
             </ul>
           </li>
           <li><a class="drop" href="mywork">MyPage</a>
           	<ul>
               <li><a href="mywork">내가 본 작품</a></li>
-              <li><a href="/member/myReview">내가 쓴 글</a></li>
+              <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품2</a></li>
+              <li><a href="/member/myReview?userId=${member.userId}">내가 쓴 글</a></li>
               <li><a href="#">회원정보수정</a></li>
             </ul>
           </li>
