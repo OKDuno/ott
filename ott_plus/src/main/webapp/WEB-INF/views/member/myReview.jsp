@@ -14,7 +14,7 @@
 				<h1> 게시판</h1>
 			</header>
 			<hr />
-
+			${member.userId}
 			<section id="container">
 				<form role="form" method="get">
 					<table>

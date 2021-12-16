@@ -40,10 +40,10 @@ Licence URI: https://www.os-templates.com/template-terms
       <div class="fl_right"> 
         <!-- ################################################################################################ -->
         <ul class="nospace">
-          <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
+          <li><a href="/ott/main"><i class="fas fa-home"></i></a></li>
           <li><a href="#" title="Help Centre"><i class="fas fa-life-ring"></i></a></li>
-          <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+          <li><a href="/member/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="/member/register" title="Sign Up"><i class="fas fa-edit"></i></a></li>
         </ul>
         <!-- ################################################################################################ -->
       </div>
@@ -80,6 +80,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><a class="drop" href="mywork">MyPage</a>
           	<ul>
               <li><a href="mywork">내가 본 작품</a></li>
+              <li><a href="/member/myReview">내가 쓴 글</a></li>
               <li><a href="#">회원정보수정</a></li>
             </ul>
           </li>
