@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ott.zerock.mapper.ReviewReplyMapper">
+
+
+	<!-- 댓글 등록 -->
+	<insert id="writeReply">
+	INSERT INTO review_reply(
+		rev_BNO
+		, rev_RNO
+		, rev_reply
+		, rev_replyer)
+	VALUES(#{rev_bno}
+		, SEQ_REVIEW_REPLY.NEXTVAL
+		, #{rev_reply}
+		, #{rev_replyer})
+	</insert>
+
+	<!-- 댓글 조회 -->
+	<select id="readReply" resultType="ott.zerock.domain.ReviewReplyVO">
+		SELECT
+    		  rev_RNO, rev_reply, rev_replyer, rev_replydate
+    	 FROM review_reply
+    	WHERE rev_BNO = #{rev_bno}
+    	order by rev_rno desc
+	</select>
+
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="ott.zerock.domain.ReviewReplyVO">
+		DELETE FROM review_reply
+		WHERE rev_RNO = #{rev_rno}
+	</delete>
+
+	<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="ott.zerock.domain.ReviewReplyVO">
+		UPDATE review_reply SET rev_reply = #{rev_reply}
+		WHERE rev_rno = #{rev_rno}
+	</update>
+
+	<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="ott.zerock.domain.ReviewReplyVO">
+		SELECT
+				rev_BNO
+			  , rev_RNO
+			  , rev_reply
+			  , rev_replyer
+			  , rev_replydate
+		  FROM review_reply
+		 WHERE rev_rno = #{rev_rno}
+	</select>
+
+
+	<!-- 댓글 가져오기 -->
+	<select id="getListWithPaging" resultType="ott.zerock.domain.ReviewReplyVO">
+		select rev_rno, rev_bno, rev_reply, rev_replyer, rev_replydate from review_reply
+		where rev_bno=#{rev_bno} order by rev_rno desc
+	</select>
+
+	<!-- 댓글 페이징처리 -->
+
+
+
+</mapper>

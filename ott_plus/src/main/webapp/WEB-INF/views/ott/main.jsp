@@ -41,8 +41,8 @@ Licence URI: https://www.os-templates.com/template-terms
         <ul class="nospace">
           <li><a href="index.html"><i class="fas fa-home"></i></a></li>
           <li><a href="#" title="Help Centre"><i class="fas fa-life-ring"></i></a></li>
-          <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+          <li><a href="/member/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="/member/register" title="Sign Up"><i class="fas fa-edit"></i></a></li>
         </ul>
         <!-- ################################################################################################ -->
       </div>
@@ -72,8 +72,8 @@ Licence URI: https://www.os-templates.com/template-terms
           </li>
           <li><a class="drop" href="#">Table</a>
             <ul>
-              <li><a href="#">추천 / 리뷰</a></li>
-              <li><a href="#">공유 / 자유</a></li>
+              <li><a href="/review/title">추천 / 리뷰</a></li>
+              <li><a href="/board/title">공유 / 자유</a></li>
             </ul>
           </li>
           <li><a class="drop" href="mywork">MyPage</a>

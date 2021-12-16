@@ -45,7 +45,7 @@
 		$("#myMovieBtn").on("click", function(){
  			var fromObj=$("#homeForm");
 			/* location.href="/member/myMovie"; */
-			fromObj.attr("action", "/member/myMovie").attr("method","get");
+			fromObj.attr("action", "/member/myMovie");
 			fromObj.submit();
 		})		
 	})
@@ -62,7 +62,7 @@
 				<button id="myReviewBtn" type="button">내가쓴글</button>
 				<button id="myMovieBtn" type="button">내가본작품</button>				
 				<input type="button" value="뒤로가기" onclick="history.back(-1);">
-				<input type="text" value="${member.userId}" />
+				<input type="hidden" value="${member.userId}" />
 			</div>
 		</c:if>
 		<c:if test="${msg == false}">

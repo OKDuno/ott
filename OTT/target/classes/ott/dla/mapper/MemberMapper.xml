@@ -65,19 +65,29 @@
 	 
 	<!-- 게시글 검색 -->
 
-	<select id="myReview" resultType="ott.dla.domain.MemberVO">
+	<select id="myReview" resultType="ott.dla.domain.BoardVO">
 		SELECT * FROM board
 		WHERE writer = #{userId}
 	</select>  
 
 	
  	<!-- 영화 목록보기 -->
- 	<select id="getList" resultType="ott.dla.domain.MemberVO">
-		select movie_title, movie_genre, movie_actor, movie_grade
+ 	<select id="getList" resultType="ott.dla.domain.MovieVO">
+		select *
 		from movie
-		where userId= #{userid}
+		where userId= #{userId}
 		order by movie_title desc
 	</select>
-	  
+
+    <!-- 쿼리 결과에 대한 맵핑 변수명 vs 컬럼명 -->
+<!--     <resultMap type="ott.dla.domain.MemberVO" id="mapping_movie">
+        <result property="movie_title" column="MOVIE_TITLE"/>
+        <result property="movie_actor" column="MOVIE_ACTOR"/>
+        <result property="movie_genre" column="MOVIE_GENRE"/>
+        <result property="movie_grade" column="MOVIE_GRADE"/>
+        <result property="userId" column="USERID"/>
+    </resultMap>
+ -->
+
 	
 </mapper>

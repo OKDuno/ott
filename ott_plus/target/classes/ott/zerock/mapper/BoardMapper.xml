@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ott.zerock.mapper.BoardMapper">
+	<!-- 목록보기 -->
+	<select id="getList" resultType="ott.zerock.domain.BoardVO">
+		select * from board order by bno desc
+	</select>
+
+	<!-- 삽입 -->
+	<insert id="insert">
+		INSERT into board(bno,teg,title,content,writer)
+		VALUES(board_seq.nextval,#{teg},#{title},#{content},#{writer})
+	</insert>
+	
+	<!-- 조회 -->
+	<select id="read" resultType="ott.zerock.domain.BoardVO">
+		select * from board where bno=#{bno}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="modify">
+		update board set bno=#{bno},title=#{title}, teg=#{teg},
+		content=#{content}, writer=#{writer},
+		regdate=sysdate
+		where bno=#{bno}
+	</update>
+
+	<!-- 삭제 -->
+	<delete id="delete">
+		delete from board where bno=#{bno}
+	</delete>
+	
+	<!-- 글 개수 -->
+	<select id="count" resultType="int">
+		select count(bno) from board
+		where
+		<include refid="criteria" />
+		bno>0
+	</select>
+
+
+	<sql id="criteria">
+		<!-- prefix : 맨 앞에 삽입 -->
+		<!-- suffix : 맨 뒤에 삽입 -->
+		<!-- prefixOverrides : 맨 앞에 있으면 삭제 -->
+		<!-- collection들을 item에 넣는다. -->
+		<!-- choose : 여러 상황들 중 하나의 상황에서만 동작한다. -->
+		<!-- when : if -->
+		<!-- "type =='T'.toString()"타입과 T가 같다면 -->
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+		<foreach collection="typeArr" item='type'>
+		 <trim prefix="OR" >
+		 <choose>
+			<when test="type =='T'.toString()">
+				title like '%' || #{keyword} || '%'
+			</when>
+			<when test="type =='C'.toString()">
+				content like '%' || #{keyword} || '%'
+			</when>
+			<when test="type =='W'.toString()">
+				writer like '%' || #{keyword} || '%'
+			</when>
+			<when test="type =='G'.toString()">
+				teg like '%' || #{keyword} || '%'
+			</when>
+		 </choose>
+		 </trim>
+		</foreach>
+		</trim>
+	</sql>
+	
+	<!-- 페이지 처리 -->
+	<select id="getListWithPaging" resultType="ott.zerock.domain.BoardVO">
+		<!-- 20개를 뽑고 그중 10개 뽑기 -->
+		<![CDATA[
+		select bno,title,teg,content,writer,regdate
+		from(select /*+INDEX_DESC(board board_pk) */
+			rownum rn, bno, title, teg, content, writer, regdate
+			from board
+			where 
+		]]>
+			<include refid="criteria" />
+			
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount})
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+
+
+</mapper>

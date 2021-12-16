@@ -181,7 +181,7 @@ public class MemberController {
 	@RequestMapping("/myMovie")
 	public String getList(@RequestParam("userId")String userId, HttpSession session, Model model) throws Exception{
 		log.info("내가 등록한 영화");
-		model.addAttribute("movie", memberservice.getList(userId));
+		model.addAttribute("member", memberservice.getList(userId));
 		session.getAttribute("member");
 		log.info("..............."+memberservice.getList(userId));
 		return "member/myMovie";

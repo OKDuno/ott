@@ -18,49 +18,58 @@
 	
 	<select id="getNmList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from netflix_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from netflix_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from netflix_m where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+		
 	
 	</select>
 	
 	<select id="getNtList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from netflix_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from netflix_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from netflix_t where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getDmList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from disneyplus_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from disneyplus_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from disneyplus_m where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getDtList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from disneyplus_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from disneyplus_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from disneyplus_t where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getHmList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from hbo_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from hbo_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from hbo_m where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getHtList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from hbo_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from hbo_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from hbo_t where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getAmList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from amazon_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from amazon_m where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from amazon_m where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 	
 	<select id="getAtList" resultType="ott.zerock.domain.ScrappingVO">
 	
-		select * from amazon_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+<!-- 		select * from amazon_t where updatedate=TO_CHAR(SYSDATE, 'YYYY-MM-DD') -->
+		select * from amazon_t where TO_CHAR(updatedate, 'YYYY-MM-DD')=TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 	
 	</select>
 
