@@ -9,15 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- jQuery -->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
+<%@ include file="../includes/header.jsp" %>
 <!-- 로그인 테스트 -->
 <div>
 	<%@include file="nav.jsp" %>
 </div>
-<!-- 로그인 테스트 끝 -->
-
-
 
 
 <div>
@@ -153,12 +149,7 @@ $(window).bind("pageshow", function(event) {
 </script>
 
 
-<!-- //id="regBtn"인 게시글 등록 버튼의 이동 경로를 "/board/insert"로 변경
-$("#regBtn").on("click",function(){
-	self.location="/board/insert";
-	
-});
- -->
+<%@ include file="../includes/footer.jsp" %>  
 
 
 
