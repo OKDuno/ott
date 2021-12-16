@@ -35,7 +35,7 @@
 <input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
 <input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
 </form>
-<c:if test="${member != null}">
+<c:if test="${board.writer eq member.userId}">
 <button data-oper="modify" class="btn btn-warning">수정</button>
 <button data-oper="delete" class="btn btn-danger">삭제</button>
 </c:if>
@@ -76,7 +76,7 @@
         </p>
         <p>${replyList.reply}</p>
         <div>
-        <c:if test="${member != null}">
+        <c:if test="${board.writer eq member.userId}">
 		  <button type="button" class="replyUpdateBtn" data-rno="${replyList.rno}">수정</button>
 		  <button type="button" class="replyDeleteBtn" data-rno="${replyList.rno}">삭제</button>
 		</c:if>
