@@ -78,12 +78,12 @@ public class MemberController {
 		log.info("post login");
 		HttpSession session = req.getSession();
 		MemberVO login = memberservice.login(vo);
-		
 		if(login == null) {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 		}else {
 			session.setAttribute("member", login);
+			
 		}
 		
 		return "redirect:/ott/main";
