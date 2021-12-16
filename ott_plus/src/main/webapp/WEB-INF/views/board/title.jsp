@@ -1,22 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 <%@ include file="../includes/header.jsp" %>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">내가본 작품</h6>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">MyPage</a></li>
+      <li><a href="#">내가 본 작품</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+
 <!-- 로그인 테스트 -->
 <div>
 	<%@include file="nav.jsp" %>
 </div>
 
 
-<div>
+<div class=scrollable>
 <form id="searchForm" action = "/board/title" method="get">
 	<select name="type">
 

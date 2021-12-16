@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html>
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<meta charset="UTF-8">
+<title>OTT 플러스</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/resources/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<!-- jQuery -->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
-<title>Besloor</title>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -50,18 +50,18 @@
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="main">OTT Plus</a></h1>
+        <h1><a href="/ott/main">OTT Plus</a></h1>
       </div>
       <!-- ################################################################################################ -->
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="main">Home</a></li>
-          <li><a class="drop" href="netflix_list">TOP10</a>
+          <li class="active"><a href="/ott/main">Home</a></li>
+          <li><a class="drop" href="/ott/netflix_list">TOP10</a>
             <ul>
-              <li><a href="netflix_list">Netflix</a></li>
-              <li><a href="disney_list">DisneyPlus</a></li>
-              <li><a href="amazon_list">Amazon</a></li>
-              <li><a href="hbo_list">HBO</a></li>
+              <li><a href="/ott/netflix_list">Netflix</a></li>
+              <li><a href="/ott/disney_list">DisneyPlus</a></li>
+              <li><a href="/ott/amazon_list">Amazon</a></li>
+              <li><a href="/ott/hbo_list">HBO</a></li>
             </ul>
           </li>
           <li><a class="drop" href="#">Table</a>
@@ -70,7 +70,7 @@
               <li><a href="/board/title">공유 / 자유</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="mywork">MyPage</a>
+          <li><a class="drop" href="/ott/mywork">MyPage</a>
           	<ul>
               <li><a href="/ott/mywork">내가 본 작품</a></li>
               <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품2</a></li>
@@ -83,23 +83,3 @@
       <!-- ################################################################################################ -->
     </header>
   </div>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article class="center">
-      <h3 class="heading underline">OTT PLUS</h3>
-      <p>넷플릭스 디즈니플러스 아마존 HBO</p>
-      <footer><a class="btn" href="netflix_list">OTT 순위 보러가기</a></footer>
-    </article>
-    <!-- ################################################################################################ -->
-  </div>
-  <!-- ################################################################################################ -->
-</div>
-<!-- End Top Background Image Wrapper -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-</body>
-</html>

@@ -7,7 +7,7 @@
       <h6 class="heading">Besloor</h6>
       <nav>
         <ul class="nospace inline pushright uppercase">
-          <li><a href="index.html"><i class="fas fa-lg fa-home"></i></a></li>
+          <li><a href="../index.html"><i class="fas fa-lg fa-home"></i></a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Terms</a></li>

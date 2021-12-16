@@ -2,18 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<!--
-Template Name: Besloor
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
+
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>Besloor</title>
+<title>OTT플러스</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/resources/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -56,18 +49,18 @@ Licence URI: https://www.os-templates.com/template-terms
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="main">OTT Plus</a></h1>
+        <h1><a href="/ott/main">OTT Plus</a></h1>
       </div>
       <!-- ################################################################################################ -->
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="main">Home</a></li>
-          <li><a class="drop" href="netflix_list">TOP10</a>
+          <li class="active"><a href="/ott/main">Home</a></li>
+          <li><a class="drop" href="/ott/netflix_list">TOP10</a>
             <ul>
-              <li><a href="netflix_list">Netflix</a></li>
-              <li><a href="disney_list">DisneyPlus</a></li>
-              <li><a href="amazon_list">Amazon</a></li>
-              <li><a href="hbo_list">HBO</a></li>
+              <li><a href="/ott/netflix_list">Netflix</a></li>
+              <li><a href="/ott/disney_list">DisneyPlus</a></li>
+              <li><a href="/ott/amazon_list">Amazon</a></li>
+              <li><a href="/ott/hbo_list">HBO</a></li>
             </ul>
           </li>
           <li><a class="drop" href="#">Table</a>
@@ -76,7 +69,7 @@ Licence URI: https://www.os-templates.com/template-terms
               <li><a href="/board/title">공유 / 자유</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="mywork">MyPage</a>
+          <li><a class="drop" href="/ott/mywork">MyPage</a>
           	<ul>
               <li><a href="/ott/mywork">내가 본 작품</a></li>
               <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품2</a></li>
@@ -97,7 +90,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <article class="center">
       <h3 class="heading underline">OTT PLUS</h3>
       <p>넷플릭스 디즈니플러스 아마존 HBO</p>
-      <footer><a class="btn" href="netflix_list">OTT 순위 보러가기</a></footer>
+      <footer><a class="btn" href="/ott/netflix_list">OTT 순위 보러가기</a></footer>
     </article>
     <!-- ################################################################################################ -->
   </div>
