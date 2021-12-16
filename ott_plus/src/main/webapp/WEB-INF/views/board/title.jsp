@@ -84,8 +84,8 @@
 				<option value="G">태그</option>
 			</select>
 			<input style="display:inline; height:38px;" type="text" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
-			<input style="display:inline; height:38px;" type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-			<input style="display:inline; height:38px;" type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			<input style="display:inline;" type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input style="display:inline;" type="hidden" name="amount" value="${pageMaker.cri.amount}">
 			
 			
 			<button style="display:inline;  height:38px;" type="submit" class="btn btn- default">검색</button>

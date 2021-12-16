@@ -8,9 +8,9 @@
     <!-- ################################################################################################ -->
     <h6 class="heading">Amazon TOP10</h6>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">TOP10</a></li>
-      <li><a href="#">Amazon</a></li>
+      <li><a href="/ott/main">Home</a></li>
+      <li><a href="/ott/netflix_list">TOP10</a></li>
+      <li><a href="/ott/amazon_list">Amazon</a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>
@@ -26,8 +26,8 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1>내가 본 작품을 등록하고 그에따라 다른작품을 추천하게 해보자</h1>
-      <img class="imgr borderedbox inspace-5" src="/resources/images/demo/imgr.gif" alt="">
+      <h1><b>Amazon Prime video TOP10</b></h1>
+<!--       <img class="imgr borderedbox inspace-5" src="/resources/images/demo/imgr.gif" alt=""> -->
       <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur.</p>
       <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p>
       
