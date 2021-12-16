@@ -79,6 +79,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <li><a class="drop" href="mywork">MyPage</a>
           	<ul>
               <li><a href="/ott/mywork">내가 본 작품</a></li>
+              <li><a href="/member/myMovie">내가 본 작품2</a></li>
               <li><a href="/member/myReview">내가 쓴 글</a></li>
               <li><a href="#">회원정보수정</a></li>
             </ul>

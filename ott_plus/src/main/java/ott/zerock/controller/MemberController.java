@@ -86,7 +86,7 @@ public class MemberController {
 			
 		}
 		
-		return "redirect:/ott/main";
+		return "redirect:/ott/main"+"?userId="+login.getUserId();
 	}
 	
 	
@@ -167,7 +167,7 @@ public class MemberController {
 	
 	// 게시판 글 목록 조회
 	@GetMapping("/myReview")
-	public String myReview(@RequestParam("userId")String userId, HttpSession session, Model model) throws Exception{
+	public String myReview(@RequestParam(value = "userId", required = false, defaultValue = "aaaa")String userId, HttpSession session, Model model) throws Exception{
 		log.info("내가 쓴 게시글");
 		log.info("체크................."+userId);
 		model.addAttribute("myReivew", memberservice.myReview(userId));
@@ -177,7 +177,7 @@ public class MemberController {
 	
 	//영화 목록 화면 이동 및 보여주기
 	@GetMapping("/myMovie")
-	public String getList(@RequestParam("userId")String userId, RedirectAttributes rttr,HttpSession session, Model model) throws Exception{
+	public String getList(@RequestParam(value = "userId", required = false, defaultValue = "aaaa")String userId, RedirectAttributes rttr,HttpSession session, Model model) throws Exception{
 		log.info("내가 등록한 영화");
 		log.info("체크................."+userId);
 		model.addAttribute("member", memberservice.getList(userId));
