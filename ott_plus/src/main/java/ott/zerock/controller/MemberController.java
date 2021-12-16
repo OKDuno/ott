@@ -143,20 +143,15 @@ public class MemberController {
 	// 패스워드 체크
 	@ResponseBody
 	@RequestMapping(value="/passChk", method = RequestMethod.POST)
-	public boolean passChk(MemberVO vo) throws Exception {
+	public String passChk(MemberVO vo) throws Exception {
 		log.info("체크................"+vo);
 		MemberVO login = memberservice.login(vo);
 		boolean pwdChk = Pattern.matches(vo.getUserPass(), login.getUserPass());
-		/* boolean pwdChk;
-		if(vo.getUserPass().equals(login.getUserPass())) {
-			pwdChk = true;
-		}else {
-			pwdChk = false;
-		}
-		log.info("입력 비밀번호......."+vo.getUserPass());
-		log.info("비밀번호......."+login.getUserPass()); */
 		log.info("체크................."+pwdChk);
-		return pwdChk;
+		if(pwdChk==true)
+			return "true";
+		else
+			return "false";
 		
 		// 틀리거나 맞는지 boolean값으로 저장된 비밀번호  값을 반환해서 판별시킴 
 	}

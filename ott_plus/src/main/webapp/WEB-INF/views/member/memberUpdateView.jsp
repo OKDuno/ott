@@ -32,14 +32,17 @@
 					//$("#userName").focus();
 					return false;
 				}
+				console.log("send_data");
+				console.log($("#updateForm").serializeArray());
 				$.ajax({
 					url : "/member/passChk",
 					type : "POST",
 					dateType : "json",
 					data : $("#updateForm").serializeArray(),
 					success: function(data){
-						
-						if(data==true){
+						console.log("데이터 값"+data);
+						console.log(data);
+						if(data=='true'){
 							if(confirm("닉네임을 변경하시겠습니까?")){
 								$("#updateForm").submit();
 								alert("닉네임이 변경되었습니다. 다시 로그인해주세요");

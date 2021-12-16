@@ -33,7 +33,7 @@
 					data : $("#delForm").serializeArray(),
 					success: function(data){
 						
-						if(data==true){
+						if(data=='true'){
 							if(confirm("정말로 탈퇴하시겠습니까?")){
 								$("#delForm").submit();
 								alert("탈퇴가 완료되었습니다.")
