@@ -6,94 +6,102 @@
   <!-- ################################################################################################ -->
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <h6 class="heading">내가본 작품</h6>
+    <h6 class="heading">요금제공유 & 자유게시판</h6>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">MyPage</a></li>
-      <li><a href="#">내가 본 작품</a></li>
+      <li><a href="/ott/main">Home</a></li>
+      <li><a href="/review/title">Table</a></li>
+      <li><a href="/board/title">요금제공유 & 자유게시판</a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>
   <!-- ################################################################################################ -->
 </div>
-
-<!-- 로그인 테스트 -->
-<div>
-	<%@include file="nav.jsp" %>
-</div>
-
-
-<div class=scrollable>
-<form id="searchForm" action = "/board/title" method="get">
-	<select name="type">
-
-		<option value="T">제목</option>
-		<option value="C">내용</option>
-		<option value="W">작성자</option>
-		<option value="G">태그</option>
-	</select>
-	<input type="text" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
-	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-	
-	
-	<button type="submit" class="btn btn- default">검색</button>
-</form>
-</div>
-
-<table width="100%">
-
-<thead>
-	<tr>
-		<td>번호</td>
-		<td>태그</td>
-		<td>제목</td>
-		<td>작성자</td>
-		<td>작성일</td>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1><b>요금제 공유 및 자유 게시판</b></h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>태그</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
+			<c:if test="${member != null}">
+			<a class="btn" href="/board/insert">게시글 등록</a>
+			</c:if>
+			<tbody>
+			
+				<c:forEach items="${list}" var="board">
+				
+					<tr>
+				       <td><c:out value="${board.bno}"/></td>
+				       <td><c:out value="${board.teg }"/></td>
+				       <td><a class="move" href='<c:out value="${board.bno }"/>'><c:out value="${board.title }"/></a></td>
+				       <td><c:out value="${board.writer }"/></td>
+				       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate }"/></td>
+					</tr>
+				</c:forEach>
+			
+			</tbody>
+        </table>
+      </div>
+      <ul class="pagination">
+		<!-- 페이징 처리부분 -->
+		<c:if test="${pageMaker.prev}">
+			<li class="paginate_button previous ${pageMaker.cri.pageNum == 1 ? 'disabled':'' }">
+			<a href="${pageMaker.startPage-1}">이전</a>
+			</li>
+		</c:if>
 		
-	</tr>
-	
-</thead>
-<!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
-<c:if test="${member != null}">
-<button><a href="/board/insert">게시글 등록</a></button>
-</c:if>
-<tbody>
+		<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+			<li class="paginate_button ${pageMaker.cri.pageNum ==num ? 'active':''}">
+			<a href="${num}">${num}</a></li>
+		</c:forEach>
+		
+		<c:if test="${pageMaker.next}">
+			<li class="paginate_button next">
+			<a href="${pageMaker.endPage+1}">다음</a>
+			</li>
+		</c:if>
+	  </ul>
+	  <div>
+		<form id="searchForm" action = "/board/title" method="get">
+			<span>
+			<select name="type" style="display:inline; height:38px;">
+		
+				<option value="T">제목</option>
+				<option value="C">내용</option>
+				<option value="W">작성자</option>
+				<option value="G">태그</option>
+			</select>
+			<input style="display:inline; height:38px;" type="text" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
+			<input style="display:inline; height:38px;" type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input style="display:inline; height:38px;" type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			
+			
+			<button style="display:inline;  height:38px;" type="submit" class="btn btn- default">검색</button>
+			</span>
+		</form>
+		</div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 
-	<c:forEach items="${list}" var="board">
-	
-		<tr>
-	       <td><c:out value="${board.bno}"/></td>
-	       <td><c:out value="${board.teg }"/></td>
-	       <td><a class="move" href='<c:out value="${board.bno }"/>'><c:out value="${board.title }"/></a></td>
-	       <td><c:out value="${board.writer }"/></td>
-	       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate }"/></td>
-		</tr>
-	</c:forEach>
-
-</tbody>
-
-</table>
-
-<ul class="pagination">
-<!-- 페이징 처리부분 -->
-<c:if test="${pageMaker.prev}">
-	<li class="paginate_button previous ${pageMaker.cri.pageNum == 1 ? 'disabled':'' }">
-	<a href="${pageMaker.startPage-1}">이전</a>
-	</li>
-</c:if>
-
-<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-	<li class="paginate_button ${pageMaker.cri.pageNum ==num ? 'active':''}">
-	<a href="${num}">${num}</a></li>
-</c:forEach>
-
-<c:if test="${pageMaker.next}">
-	<li class="paginate_button next">
-	<a href="${pageMaker.endPage+1}">다음</a>
-	</li>
-</c:if>
-</ul>
 
 
 <form id='actionform' action="/board/title" method="get">
