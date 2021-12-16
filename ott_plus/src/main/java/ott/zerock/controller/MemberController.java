@@ -170,7 +170,7 @@ public class MemberController {
 	public String myReview(@RequestParam("userId")String userId, HttpSession session, Model model) throws Exception{
 		log.info("내가 쓴 게시글");
 		log.info("체크................."+userId);
-		model.addAttribute("myReivew", memberservice.myReview(userId));
+		model.addAttribute("myReview", memberservice.myReview(userId));
 		//service.list()에 담긴 데이터를 "list"라는 이름으로 담을것이다	
 		return "member/myReview";
 	}

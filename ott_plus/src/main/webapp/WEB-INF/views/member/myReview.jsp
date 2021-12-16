@@ -20,7 +20,7 @@
 					<table>
 						<tr><th>번호</th><th>태그</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
 						
-							<c:forEach items="${list}" var="board">	
+							<c:forEach items="${myReview}" var="board">	
 								<tr>
 								      <td><c:out value="${board.bno}"/></td>
 								      <td><c:out value="${board.teg }"/></td>
