@@ -26,25 +26,7 @@ public class OTTController {
 		
 		model.addAttribute("recomlist", s_service.recommend());
 	}
-	
-	@RequestMapping("mywork")
-	public void mywork(Model model) {
-		model.addAttribute("inputlist", s_service.inputList());
-	}
 
-	@GetMapping("test2")
-	public void test2(String title, Model model) throws Exception {
-		model.addAttribute("inputlist", s_service.inputList());
-		model.addAttribute("testlist", s_service.findInfo(title));
-	}
-	
-	@PostMapping("test2")
-	public String test2(MovieVO input,Model model) {
-		s_service.input(input);
-		
-		return "redirect:/ott/mywork";
-	}
-	
 	@RequestMapping("netflix_list")
 	public void netflix_list(Model model) {
 		log.info("netflix_list...");
