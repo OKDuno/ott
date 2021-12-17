@@ -6,8 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ott.zerock.domain.InputVO;
-
+import ott.zerock.domain.MovieVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.zerock.service.ScrappingService;
@@ -40,7 +39,7 @@ public class OTTController {
 	}
 	
 	@PostMapping("test2")
-	public String test2(InputVO input,Model model) {
+	public String test2(MovieVO input,Model model) {
 		s_service.input(input);
 		
 		return "redirect:/ott/mywork";

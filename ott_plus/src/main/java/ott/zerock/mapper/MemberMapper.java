@@ -3,6 +3,7 @@ package ott.zerock.mapper;
 import java.util.List;
 
 import ott.zerock.domain.BoardVO;
+import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 

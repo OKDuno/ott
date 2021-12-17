@@ -3,7 +3,7 @@ package ott.zerock.mapper;
 import java.util.List;
 
 import ott.zerock.domain.InputVO;
-
+import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
 
 
@@ -33,8 +33,8 @@ public interface ScrappingMapper {
 	public List<ScrappingVO> getAtList();
 	
 	//내가 본 작품 등록
-	public void input(InputVO input);
+	public void input(MovieVO input);
 	
 	//내가 본 작품 리스트
-	public List<InputVO> inputList();
+	public List<MovieVO> inputList();
 }

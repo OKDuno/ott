@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,10 +19,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.zerock.domain.Criteria;
+import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MemberVO;
+import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.PageDTO;
 import ott.zerock.service.MemberService;
 import ott.zerock.service.ReviewService;
+import ott.zerock.service.ScrappingService;
 
 
 
@@ -31,7 +35,7 @@ import ott.zerock.service.ReviewService;
 @RequestMapping("/member/*")
 public class MemberController {
 
-	
+	private ScrappingService s_service;
 	private ReviewService reviewservice;
 	private MemberService memberservice;
 
@@ -189,6 +193,19 @@ public class MemberController {
 		session.getAttribute("member");
 		return "member/myMovie";
 		
+	}
+	
+	@GetMapping("/myMovieInsert")
+	public void myMovieInsert(String title, Model model) throws Exception {
+		model.addAttribute("testlist", s_service.findInfo(title));
+		//session.getAttribute("member");
+	}
+	
+	@PostMapping("/myMovieInsert")
+	public String myMovieInsert(MovieVO input,Model model) {
+		s_service.input(input);
+		
+		return "redirect:/member/myMovie?userId="+input.getUserId();
 	}
 	
 	

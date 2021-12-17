@@ -6,13 +6,13 @@
 <mapper namespace="ott.zerock.mapper.ScrappingMapper">
 
 	<insert id="input">
-		insert into viewtable (title, genre, actor, score) 
-		values (#{title}, #{genre}, #{actor}, #{score})
+		insert into movie (movie_title, movie_genre, movie_actor, movie_grade, userid) 
+		values (#{movie_title}, #{movie_genre}, #{movie_actor}, #{movie_grade}, #{userId})
 	</insert>
 	
-	<select id="inputList" resultType="ott.zerock.domain.InputVO">
+	<select id="inputList" resultType="ott.zerock.domain.MovieVO">
 		<![CDATA[
-			select * from viewtable
+			select * from movie
 		]]>
 	</select>
 	

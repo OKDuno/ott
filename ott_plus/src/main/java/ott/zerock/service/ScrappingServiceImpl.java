@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import ott.zerock.domain.InputVO;
+import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
 import ott.zerock.mapper.ScrappingMapper;
 
@@ -101,13 +102,13 @@ public class ScrappingServiceImpl implements ScrappingService {
 	}
 
 	@Override
-	public void input(InputVO input) {
+	public void input(MovieVO input) {
 		// TODO Auto-generated method stub
 		mapper.input(input);
 	}
 
 	@Override
-	public List<InputVO> inputList() {
+	public List<MovieVO> inputList() {
 		// TODO Auto-generated method stub
 		return mapper.inputList();
 	}
@@ -145,5 +146,6 @@ public class ScrappingServiceImpl implements ScrappingService {
     	
 		return list;
 	}
+
 
 }

@@ -24,63 +24,32 @@
       <!-- ################################################################################################ -->
       <h1><b>내가 본 영화</b></h1>
       <div class="scrollable">
-        <table>
-          <thead>
-            <tr>
-              <th>제목</th>
-              <th>장르</th>
-              <th>주연배우</th>
-              <th>평점</th>
-            </tr>
-          </thead>
-          <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
-			<tbody>
-			
-				<c:forEach items="${movie}" var="list">
-				
-					<tr>
-				    	<td><c:out value="${list.movie_title}" /></td>
-						<td><c:out value="${list.movie_genre}" /></td>
-						<td><c:out value="${list.movie_actor}" /></td>
-						<td><c:out value="${list.movie_grade}" /></td>
-<%-- 						<td>${member.userId}</td> --%>
-					</tr>
-				</c:forEach>
-			
-			</tbody>
-        </table>
-      </div>
-      <c:if test="${member != null}">
-			    <form action="/member/myMovieInsert" method="get">
-		        	<table>
-			        	<tr>
-			        		<td>영화작품 평점 등록</td>
-			        	</tr>
-			        	<tr>
-			        		<td>제목 :<input type="text" name="title"><button type="submit" name="확인" >확인</button></td>
-			        	</tr>
-		        	</table>
-				</form>
-			</c:if>
-      <ul class="pagination">
-		<!-- 페이징 처리부분 -->
-		<c:if test="${pageMaker.prev}">
-			<li class="paginate_button previous ${pageMaker.cri.pageNum == 1 ? 'disabled':'' }">
-			<a href="${pageMaker.startPage-1}">이전</a>
-			</li>
-		</c:if>
-		
-		<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-			<li class="paginate_button ${pageMaker.cri.pageNum ==num ? 'active':''}">
-			<a href="${num}">${num}</a></li>
-		</c:forEach>
-		
-		<c:if test="${pageMaker.next}">
-			<li class="paginate_button next">
-			<a href="${pageMaker.endPage+1}">다음</a>
-			</li>
-		</c:if>
-	  </ul>
+      <form action="/member/myMovieInsert" method="post">
+        	<table>
+	        	<thead>
+		        	<tr>
+		        		<th>작품명</th>
+		        		<th>장르</th>
+		        		<th>주연배우</th>
+		        		<th>평점</th>
+		        		<th>아이디</th>
+		        	</tr>
+		        </thead>
+		        <tbody>
+		        	<tr>
+		        		<td><input type="text" name="movie_title" value="<c:out value="${testlist[0].title}"/>"></td>
+						<td><input type="text" name="movie_genre" value="<c:out value="${testlist[0].genre}"/>"></td>
+						<td><input type="text" name="movie_actor" value="<c:out value="${testlist[0].actor}"/>"></td>
+						<td><input type="text" name="movie_grade"></td>
+						<td><input type="text" name="userId" value="<c:out value="${member.userId}"/>"></td>
+		        	</tr>
+		        	<tr>
+		        		<td><button type="submit">등록</button></td>
+		        	</tr>
+		        </tbody>
+        	</table>
+		</form>
+        
     </div>
     <!-- ################################################################################################ -->
     <!-- / main body -->

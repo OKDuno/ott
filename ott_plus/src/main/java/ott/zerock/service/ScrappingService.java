@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import ott.zerock.domain.InputVO;
+import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
 
 public interface ScrappingService {
@@ -35,10 +36,10 @@ public interface ScrappingService {
 	public List<Map<String, Object>> findInfo(String title) throws Exception;
 	
 	//내가 본 작품(제목, 장르, 배우, 평점) 등록
-	public void input(InputVO input);
+	public void input(MovieVO input);
 	
 	//내가 본 작품(제목, 장르, 배우, 평점) 리스트
-	public List<InputVO> inputList();
+	public List<MovieVO> inputList();
 	
 	//작품 추천(영화)
 	public List<String> recommend() throws Exception;
