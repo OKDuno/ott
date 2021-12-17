@@ -77,7 +77,7 @@
 		<form id="searchForm" action = "/board/title" method="get">
 			<span>
 			<select name="type" style="display:inline; height:38px;">
-		
+
 				<option value="T">제목</option>
 				<option value="C">내용</option>
 				<option value="W">작성자</option>

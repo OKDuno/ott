@@ -1,91 +1,107 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<!-- jQuery -->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
-
-<div>
-	<%@include file="nav.jsp" %>
+<%@ include file="../includes/header.jsp" %>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">영화 드라마 추천게시판</h6>
+    <ul>
+      <li><a href="/ott/main">Home</a></li>
+      <li><a href="/review/title">Table</a></li>
+      <li><a href="/review/title">영화 드라마 추천게시판</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
 </div>
-
-<div>
-<form id="searchForm" action = "/review/title" method="get">
-	<select name="type">
-
-		<option value="T">제목</option>
-		<option value="C">내용</option>
-		<option value="W">작성자</option>
-		<option value="G">태그</option>
-	</select>
-	<input type="text" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
-	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-	
-	
-	<button type="submit" class="btn btn- default">검색</button>
-</form>
-</div>
-
-<table width="100%">
-
-<thead>
-	<tr>
-		<td>번호</td>
-		<td>태그</td>
-		<td>제목</td>
-		<td>작성자</td>
-		<td>작성일</td>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1><b>영화 드라마 추천게시판</b></h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>태그</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
+			<c:if test="${member != null}">
+			<a class="btn" href="/reivew/insert">게시글 등록</a>
+			</c:if>
+			<tbody>
+			
+				<c:forEach items="${list}" var="review">
+				
+					<tr>
+				       <td><c:out value="${review.rev_bno}"/></td>
+				       <td><c:out value="${review.rev_teg }"/></td>
+				       <td><a class="move" href='<c:out value="${review.rev_bno }"/>'><c:out value="${review.rev_title }"/></a></td>
+				       <td><c:out value="${review.rev_writer }"/></td>
+				       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${review.rev_regdate }"/></td>
+					</tr>
+				</c:forEach>
+			
+			</tbody>
+        </table>
+      </div>
+      <ul class="pagination">
+		<!-- 페이징 처리부분 -->
+		<c:if test="${pageMaker.prev}">
+			<li class="paginate_button previous ${pageMaker.cri.pageNum == 1 ? 'disabled':'' }">
+			<a href="${pageMaker.startPage-1}">이전</a>
+			</li>
+		</c:if>
 		
-	</tr>
-	
-</thead>
-<c:if test="${member != null}">
-<button><a href="/review/insert">게시글 등록</a></button>
-</c:if>
-<tbody>
+		<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+			<li class="paginate_button ${pageMaker.cri.pageNum ==num ? 'active':''}">
+			<a href="${num}">${num}</a></li>
+		</c:forEach>
+		
+		<c:if test="${pageMaker.next}">
+			<li class="paginate_button next">
+			<a href="${pageMaker.endPage+1}">다음</a>
+			</li>
+		</c:if>
+	  </ul>
+	  <div>
+		<form id="searchForm" action = "/review/title" method="get">
+			<span>
+			<select name="type" style="display:inline; height:38px;">
 
-	<c:forEach items="${list}" var="review">
-	
-		<tr>
-	       <td><c:out value="${review.rev_bno}"/></td>
-	       <td><c:out value="${review.rev_teg }"/></td>
-	       <td><a class="move" href='<c:out value="${review.rev_bno }"/>'><c:out value="${review.rev_title }"/></a></td>
-	       <td><c:out value="${review.rev_writer }"/></td>
-	       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${review.rev_regdate }"/></td>
-		</tr>
-	</c:forEach>
+				<option value="T">제목</option>
+				<option value="C">내용</option>
+				<option value="W">작성자</option>
+				<option value="G">태그</option>
+			</select>
+			<input style="display:inline; height:38px;" type="text" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
+			<input style="display:inline;" type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input style="display:inline;" type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			
+			
+			<button style="display:inline;  height:38px;" type="submit" class="btn btn- default">검색</button>
+			</span>
+		</form>
+		</div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 
-</tbody>
-
-</table>
-
-<ul class="pagination">
-<!-- 페이징 처리부분 -->
-<c:if test="${pageMaker.prev}">
-	<li class="paginate_button previous ${pageMaker.cri.pageNum == 1 ? 'disabled':'' }">
-	<a href="${pageMaker.startPage-1}">이전</a>
-	</li>
-</c:if>
-
-<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-	<li class="paginate_button ${pageMaker.cri.pageNum ==num ? 'active':''}">
-	<a href="${num}">${num}</a></li>
-</c:forEach>
-
-<c:if test="${pageMaker.next}">
-	<li class="paginate_button next">
-	<a href="${pageMaker.endPage+1}">다음</a>
-	</li>
-</c:if>
-</ul>
 
 
 <form id='actionform' action="/review/title" method="get">
@@ -156,8 +172,5 @@ $("#regBtn").on("click",function(){
  -->
 
 
-
-
-</body>
-</html>
+<%@ include file="../includes/footer.jsp" %>  
 
