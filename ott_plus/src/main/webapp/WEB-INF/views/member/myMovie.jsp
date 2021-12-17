@@ -54,10 +54,10 @@
 			    <form action="/member/myMovieInsert" method="get">
 		        	<table>
 			        	<tr>
-			        		<td>영화작품 평점 등록</td>
+			        		<td colspan="3">영화작품 평점 등록</td>
 			        	</tr>
 			        	<tr>
-			        		<td>제목 :<input type="text" name="title"><button type="submit" name="확인" >확인</button></td>
+			        		<td colspan="3">제목 : <input style="display:inline;" type="text" name="title"> <button style="display:inline;" type="submit" name="확인" >확인</button></td>
 			        	</tr>
 		        	</table>
 				</form>
