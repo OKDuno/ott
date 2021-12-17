@@ -36,7 +36,7 @@
           </thead>
           <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
 			<c:if test="${member != null}">
-			<a class="btn" href="/reivew/insert">게시글 등록</a>
+			<a class="btn" href="/review/insert">게시글 등록</a>
 			</c:if>
 			<tbody>
 			

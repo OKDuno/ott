@@ -3,7 +3,6 @@ package ott.zerock.service;
 import java.util.List;
 
 import ott.zerock.domain.BoardVO;
-import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ReviewVO;

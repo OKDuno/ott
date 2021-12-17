@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.zerock.domain.BoardVO;
-import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
-import ott.zerock.domain.ReviewVO;
 import ott.zerock.mapper.MemberMapper;
 
 

@@ -65,7 +65,7 @@
               <li><a href="/ott/hbo_list">HBO</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="#">Table</a>
+          <li><a class="drop" href="/review/title">Table</a>
             <ul>
               <li><a href="/review/title">추천 / 리뷰</a></li>
               <li><a href="/board/title">공유 / 자유</a></li>
