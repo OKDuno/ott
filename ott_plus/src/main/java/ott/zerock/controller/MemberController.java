@@ -23,6 +23,7 @@ import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.PageDTO;
+import ott.zerock.service.BoardService;
 import ott.zerock.service.MemberService;
 import ott.zerock.service.ReviewService;
 import ott.zerock.service.ScrappingService;
@@ -38,7 +39,6 @@ public class MemberController {
 	private ScrappingService s_service;
 	private ReviewService reviewservice;
 	private MemberService memberservice;
-
 	
 	// 회원가입 get
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -178,7 +178,7 @@ public class MemberController {
 		log.info("내가 쓴 게시글");
 		log.info("체크................."+userId);
 		model.addAttribute("myReview", memberservice.myReview(userId));
-		model.addAttribute("pageMaker", new PageDTO(cri,reviewservice.count(cri)));
+		model.addAttribute("pageMaker", new PageDTO(cri,memberservice.count(cri)));
 		//service.list()에 담긴 데이터를 "list"라는 이름으로 담을것이다	
 		return "member/myReview";
 	}

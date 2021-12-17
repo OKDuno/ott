@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.zerock.domain.BoardVO;
-import ott.zerock.domain.ListVO;
+import ott.zerock.domain.Criteria;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ReviewVO;
@@ -75,5 +75,19 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return mapper.getList(userId);
 	}	
+
+//	// 내가 쓴 게시글 목록 페이징
+//	@Override
+//	public List<BoardVO> myReviewWithPaging(String userId, Criteria cri) {
+//		// TODO Auto-generated method stub
+//		return mapper.myReviewWithPaging(userId, cri);
+//	}
+//	
+//	//내가 쓴 게시물 글 개수
+//	@Override
+//	public int count(Criteria cri) {
+//		log.info("개수");
+//		return mapper.count(cri);
+//	}
 	
 }

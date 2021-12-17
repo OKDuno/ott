@@ -3,6 +3,7 @@ package ott.zerock.service;
 import java.util.List;
 
 import ott.zerock.domain.BoardVO;
+import ott.zerock.domain.Criteria;
 import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
@@ -38,5 +39,11 @@ public interface MemberService {
 	
 	//영화 목록
 	public List<MovieVO> getList(String userId);
+	
+//	//내가 쓴 게시글 페이징
+//	public List<BoardVO> myReviewWithPaging(String userId, Criteria cri);
+//	
+//	//내가 쓴 게시글 글 개수
+//	public int count(Criteria cri);	
 	
 }
