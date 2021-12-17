@@ -17,8 +17,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import ott.zerock.domain.Criteria;
 import ott.zerock.domain.MemberVO;
+import ott.zerock.domain.PageDTO;
 import ott.zerock.service.MemberService;
+import ott.zerock.service.ReviewService;
 
 
 
@@ -29,7 +32,7 @@ import ott.zerock.service.MemberService;
 public class MemberController {
 
 	
-	
+	private ReviewService reviewservice;
 	private MemberService memberservice;
 
 	
@@ -177,10 +180,11 @@ public class MemberController {
 	
 	//영화 목록 화면 이동 및 보여주기
 	@GetMapping("/myMovie")
-	public String getList(@RequestParam("userId")String userId, RedirectAttributes rttr,HttpSession session, Model model) throws Exception{
+	public String getList(@RequestParam("userId")String userId, RedirectAttributes rttr,HttpSession session, Model model, Criteria cri) throws Exception{
 		log.info("내가 등록한 영화");
 		log.info("체크................."+userId);
-		model.addAttribute("member", memberservice.getList(userId));
+		model.addAttribute("movie", memberservice.getList(userId));
+		model.addAttribute("pageMaker", new PageDTO(cri,reviewservice.count(cri)));
 		rttr.addFlashAttribute("result", memberservice.getList(userId));
 		session.getAttribute("member");
 		return "member/myMovie";
