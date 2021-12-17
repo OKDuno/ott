@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 	<head>
+	<!-- jQuery -->
+	<script src="/resources/vendor/jquery/jquery.min.js"></script>
 	 	<title>게시판</title>
 	 	<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
@@ -16,7 +18,7 @@
 			<hr />
 			${member.userId}
 			<section id="container">
-				<form role="form" method="get">
+				<form id='actionform' role="form" method="get">
 					<table>
 						<tr><th>번호</th><th>태그</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
 						
@@ -36,5 +38,18 @@
 			</section>
 			<hr />
 		</div>
+
+<script>
+//제목을 클릭했을때 동작하는 자바 스크립트
+var actionform = $("#actionform");
+$(".move").on("click", function(e){
+	e.preventDefault(); //기본 이벤트 동작금지
+	actionform.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
+	//console.log();
+	actionform.attr("action","/board/read");
+	actionform.submit();
+	
+});		
+</script>
 	</body>
 </html>
