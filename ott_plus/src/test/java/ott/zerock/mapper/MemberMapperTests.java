@@ -57,7 +57,7 @@ public class MemberMapperTests {
 	
 	@Test
 	public void testMyboard(){
-		log.info(mapper.myReview("cc"));
+		log.info(mapper.myReview("dla"));
 	}
 	
 	

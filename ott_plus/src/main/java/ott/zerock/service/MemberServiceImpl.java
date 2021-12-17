@@ -2,16 +2,16 @@ package ott.zerock.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.springframework.stereotype.Service;
 
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import ott.zerock.domain.BoardVO;
+import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
+import ott.zerock.domain.ReviewVO;
 import ott.zerock.mapper.MemberMapper;
 
 
@@ -68,7 +68,7 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return mapper.myReview(userId);
 	}
-
+	
 	//영화 목록
 	@Override
 	public List<MovieVO> getList(String userId) {

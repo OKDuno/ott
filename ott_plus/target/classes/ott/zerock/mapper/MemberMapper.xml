@@ -63,13 +63,48 @@
 			
 	</select> -->
 	 
-	<!-- 게시글 검색 -->
+	<!-- 게시글 검색(공유/자유만) -->
 
-	<select id="myReview" resultType="ott.zerock.domain.BoardVO">
+<!-- 	<select id="myReview" resultType="ott.zerock.domain.BoardVO">
 		SELECT * FROM board, review
 		WHERE writer = #{userId}
-	</select>  
+	</select>   -->
 
+<!-- 	<resultMap type="ott.zerock.domain.ReviewVO" id="reviewMap"> -->
+<!-- 		<result property="rev_bno" column="rev_bno" /> -->
+<!-- 		<result property="rev_teg" column="rev_teg" /> -->
+<!-- 		<result property="rev_title" column="rev_title" /> -->
+<!-- 		<result property="rev_content" column="rev_content" /> -->
+<!-- 		<result property="rev_writer" column="rev_writer" /> -->
+<!-- 		<result property="rev_regdate" column="rev_regdate" /> -->
+<!-- 	</resultMap> -->
+	
+<!-- 	<resultMap type="ott.zerock.domain.BoardVO" id="boardMap"> -->
+<!-- 		<result property="bno" column="bno" /> -->
+<!-- 		<result property="teg" column="teg" /> -->
+<!-- 		<result property="title" column="title" /> -->
+<!-- 		<result property="content" column="content" /> -->
+<!-- 		<result property="writer" column="writer" /> -->
+<!-- 		<result property="regdate" column="regdate" /> -->
+<!-- 		<collection property="reviewMap" resultMap="ott.zerock.domain.ReviewVO" /> -->
+<!-- 	</resultMap>	 -->
+	
+	<select id="myReview" resultType="ott.zerock.domain.BoardVO">
+		SELECT bno, teg, title, writer, regdate FROM
+		(select bno bno, teg teg, title title, writer writer, regdate regdate FROM board where writer = #{userId}
+		UNION ALL
+		select rev_bno bno, rev_teg teg, rev_title title, rev_writer writer, rev_regdate regdate FROM review where rev_writer = #{userId})
+		order by regdate desc
+	</select>
+
+	
+<!-- 	<select id ="myReview" resultMap="ott.zerock.domain.BoardVO" parameterType="ott.zerock.domain.BoardVO"> -->
+<!-- 		SELECT bno, teg, title, writer, regdate FROM -->
+<!-- 		(select bno bno, teg teg, title title, writer writer, regdate regdate FROM board where writer = #{userId} -->
+<!-- 		UNION ALL -->
+<!-- 		select rev_bno bno, rev_teg teg, rev_title title, rev_writer writer, rev_regdate regdate FROM review where rev_writer = #{userId}) -->
+<!-- 		order by regdate desc; -->
+<!-- 	</select> -->
 	
  	<!-- 영화 목록보기 -->
  	<select id="getList" resultType="ott.zerock.domain.MovieVO">

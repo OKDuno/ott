@@ -4,6 +4,7 @@ import java.util.List;
 
 import ott.zerock.domain.BoardVO;
 import ott.zerock.domain.InputVO;
+import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 
@@ -32,7 +33,7 @@ public interface MemberMapper {
 	
 	// 내가쓴 게시글
 	public List<BoardVO> myReview(String userId);
-
+	
 	//영화 목록보기
 	public List<MovieVO> getList(String userId);
 }

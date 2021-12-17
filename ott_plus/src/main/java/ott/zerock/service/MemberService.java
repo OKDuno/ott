@@ -3,8 +3,10 @@ package ott.zerock.service;
 import java.util.List;
 
 import ott.zerock.domain.BoardVO;
+import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
+import ott.zerock.domain.ReviewVO;
 
 
 
@@ -33,7 +35,7 @@ public interface MemberService {
 
 	// 내가쓴 게시글
 	public List<BoardVO> myReview(String userId) throws Exception;
-
+	
 	//영화 목록
 	public List<MovieVO> getList(String userId);
 	

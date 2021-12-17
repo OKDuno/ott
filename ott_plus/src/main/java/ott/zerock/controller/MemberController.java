@@ -174,10 +174,11 @@ public class MemberController {
 	
 	// 게시판 글 목록 조회
 	@GetMapping("/myReview")
-	public String myReview(@RequestParam("userId")String userId, HttpSession session, Model model) throws Exception{
+	public String myReview(@RequestParam("userId")String userId, HttpSession session, Model model, Criteria cri) throws Exception{
 		log.info("내가 쓴 게시글");
 		log.info("체크................."+userId);
 		model.addAttribute("myReview", memberservice.myReview(userId));
+		model.addAttribute("pageMaker", new PageDTO(cri,reviewservice.count(cri)));
 		//service.list()에 담긴 데이터를 "list"라는 이름으로 담을것이다	
 		return "member/myReview";
 	}
