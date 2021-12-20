@@ -8,7 +8,6 @@ import ott.zerock.domain.BoardVO;
 import ott.zerock.domain.Criteria;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
-import ott.zerock.domain.ReviewVO;
 
 
 
