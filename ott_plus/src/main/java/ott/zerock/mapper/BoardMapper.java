@@ -19,7 +19,7 @@ public interface BoardMapper {
 	public int delete(Long bno);
 	//�� ����
 	public int modify(BoardVO board);
-	//�� ��� ����(������ ����)
+	//페이징
 	public List<BoardVO> getListWithPaging(Criteria cri);
 	//�� ����
 	public int count(Criteria cri);

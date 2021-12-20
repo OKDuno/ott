@@ -72,5 +72,14 @@ public class MemberControllerTests {
 	}
 	
 	
+	@Test
+	public void testListPageing() throws Exception {
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/member/myReview")
+				.param("pageNum", "1")
+				.param("amount", "10"))
+				.andReturn().getModelAndView().getModelMap());
+		
+	}
+	
 	
 }

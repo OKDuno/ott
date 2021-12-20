@@ -74,7 +74,7 @@
           	<ul>
               <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품</a></li>
               <li><a href="/member/myReview?userId=${member.userId}">내가 쓴 글</a></li>
-              <li><a href="#">회원정보수정</a></li>
+              <li><a href="/member/myPageView?userId=${member.userId}">회원정보수정</a></li>
             </ul>
           </li>
         </ul>

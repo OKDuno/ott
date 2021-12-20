@@ -5,7 +5,7 @@
   <!-- ################################################################################################ -->
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <h6 class="heading">내가 본 영화</h6>
+    <h6 class="heading">내가 쓴 글</h6>
     <ul>
       <li><a href="/ott/main">Home</a></li>
       <li><a href="/member/myMovie?userId=${member.userId}">Mypage</a></li>
@@ -85,6 +85,7 @@
 	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 	<input type="hidden" name="type" value="<c:out value='${pageMaker.cri.type}'/>">
     <input type="hidden" name="keyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
+    <input type="hidden" name="userId" value="<c:out value='${member.userId}'/>">
 </form>	
 
 <script type="text/javascript">

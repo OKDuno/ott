@@ -19,7 +19,7 @@ public interface BoardService {
 	public boolean delete(Long bno);
 	//�ۼ���
 	public boolean modify(BoardVO board);
-	//�� ��Ϻ���(����¡ ó��)
+	//페이징
 	public List<BoardVO> getList(Criteria cri);
 	//�۰���
 	public int count(Criteria cri);
