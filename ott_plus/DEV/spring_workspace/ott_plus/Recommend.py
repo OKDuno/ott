@@ -2,11 +2,11 @@ import requests
 from bs4 import BeautifulSoup 
 import cx_Oracle
 
-dsn = cx_Oracle.makedsn("192.168.0.64",1521,"xe")
-conn=cx_Oracle.connect("ott","1234")
+dsn = cx_Oracle.makedsn("mit8.iptime.org",2315,"xe")
+conn=cx_Oracle.connect("ott","1234",dsn)
 cursor=conn.cursor()
 
-sql = "select title from viewtable order by score asc"
+sql = "select movie_title from movie order by movie_grade"
 cursor.execute(sql)
 
 for i in cursor:
@@ -30,16 +30,3 @@ for i in range(0,3):
     print(title)
     print(img)
 
-#print(title_src[0].a.text)
-#print(img_src[0].get("src"))
-#print(title_src[1].a.text)
-#print(img_src[1].get("src"))
-#print(title_src[2].a.text)
-#print(img_src[2].get("src"))
-
-
-#1. db에 타이틀과 사진을 같이 넣고 꺼낸다.
-# - 문제점 : 매일 파이썬 파일을 실행하고 제목 & 사진을 저장해야함.
-
-#2. 크롤링 데이터를 바로 웹으로 보낸다.
-# - 문제점 : 사진 데이터를 바로 보낼 수 있나?

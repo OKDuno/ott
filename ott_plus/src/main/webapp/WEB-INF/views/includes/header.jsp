@@ -34,9 +34,9 @@
         <!-- ################################################################################################ -->
         <ul class="nospace">
           <li><a href="/ott/main"><i class="fas fa-home"></i></a></li>
-          <li><a href="#" title="Help Centre"><i class="fas fa-life-ring"></i></a></li>
-          <li><a href="/member/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="/member/register" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+          <li><c:if test="${member != null}"><a href="/member/logout" title="Logout"><i class="fas fa-sign-out-alt"></i></a></c:if></li>
+          <li><c:if test="${member == null}"><a href="/member/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></c:if></li>
+		  <li><c:if test="${member == null}"><a href="/member/register" title="Sign Up"><i class="fas fa-edit"></i></a></c:if></li>
         </ul>
         <!-- ################################################################################################ -->
       </div>
