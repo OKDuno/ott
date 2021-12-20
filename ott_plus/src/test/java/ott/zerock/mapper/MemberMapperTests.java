@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.log4j.Log4j;
+import ott.zerock.domain.Criteria;
 import ott.zerock.domain.MemberVO;
 
 
@@ -59,6 +60,7 @@ public class MemberMapperTests {
 	public void testMyboard(){
 		log.info(mapper.myReview("dla"));
 	}
+
 	
 	
 	

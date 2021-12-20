@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="insert" method="post">
+<form action="/board/insert" method="post">
     <div class="form-group">
         <label>제목</label>
         <input class="form-control" placeholder="제목을 입력하세요."

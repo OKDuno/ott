@@ -65,7 +65,7 @@
               <li><a href="/ott/hbo_list">HBO</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="#">Table</a>
+          <li><a class="drop" href="/review/title">Table</a>
             <ul>
               <li><a href="/review/title">추천 / 리뷰</a></li>
               <li><a href="/board/title">공유 / 자유</a></li>
@@ -75,7 +75,7 @@
           	<ul>
               <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품</a></li>
               <li><a href="/member/myReview?userId=${member.userId}">내가 쓴 글</a></li>
-              <li><a href="#">회원정보수정</a></li>
+              <li><a href="/member/myPageView?userId=${member.userId}">회원정보수정</a></li>
             </ul>
           </li>
         </ul>

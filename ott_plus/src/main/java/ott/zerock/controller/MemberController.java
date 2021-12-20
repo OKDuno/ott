@@ -177,7 +177,7 @@ public class MemberController {
 	public String myReview(@RequestParam("userId")String userId, HttpSession session, Model model, Criteria cri) throws Exception{
 		log.info("내가 쓴 게시글");
 		log.info("체크................."+userId);
-		model.addAttribute("myReview", memberservice.myReview(userId));
+		model.addAttribute("myReview", memberservice.myReviewWithPaging(userId, cri));
 		model.addAttribute("pageMaker", new PageDTO(cri,memberservice.count(cri)));
 		//service.list()에 담긴 데이터를 "list"라는 이름으로 담을것이다	
 		return "member/myReview";
@@ -188,9 +188,9 @@ public class MemberController {
 	public String getList(@RequestParam("userId")String userId, RedirectAttributes rttr,HttpSession session, Model model, Criteria cri) throws Exception{
 		log.info("내가 등록한 영화");
 		log.info("체크................."+userId);
-		model.addAttribute("movie", memberservice.getList(userId));
-		model.addAttribute("pageMaker", new PageDTO(cri,reviewservice.count(cri)));
-		rttr.addFlashAttribute("result", memberservice.getList(userId));
+		model.addAttribute("movie", memberservice.getListWithPaging(userId, cri));
+		model.addAttribute("pageMaker", new PageDTO(cri,memberservice.getListCount(cri)));
+		rttr.addFlashAttribute("result", memberservice.getListWithPaging(userId, cri));
 		session.getAttribute("member");
 		return "member/myMovie";
 		

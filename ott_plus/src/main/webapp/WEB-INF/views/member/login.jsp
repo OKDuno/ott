@@ -6,14 +6,36 @@
 <head>
 	<title>Home</title>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!-- 부가적인 테마 -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	부가적인 테마
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
 	<!-- jQuery -->
 	<script src="/resources/vendor/jquery/jquery.min.js"></script>
- 
+<!-- 추가 --> 
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/resources/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/resources/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<!--===============================================================================================--> 
+<!-- 추가 끝 -->
 </head>
-<a href="/board/title">게시판</a><br /><!-- title이 아니라 메인화면으로 변경하기 -->
 <script type="text/javascript">
 	$(document).ready(function(){
 		
@@ -35,19 +57,28 @@
 	})
 </script>
 <body>
-	<form name='homeForm' method="post" action="/member/login">
+<div class="limiter">
+	<div class="container-login100" style="background-image: url('/resources/images/bg-01.jpg');">
+		
+		<div class="wrap-login100 p-t-30 p-b-50">
+			<span class="login100-form-title p-b-41">
+				Account Login
+			</span>
+	<form name='homeForm' method="post" action="/member/login" class="login100-form validate-form p-b-33 p-t-5">
 		<c:if test="${member == null}">
-			<div>
-				<label for="userId">아이디</label>
-				<input type="text" id="userId" name="userId">
+			<div class="wrap-input100 validate-input" data-validate = "Enter username">
+				<label for="userId"></label>
+				<input type="text" id="userId" name="userId" class="input100" placeholder="User name">
+				<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 			</div>
-			<div>
-				<label for="userPass">비밀번호</label>
-				<input type="password" id="userPass" name="userPass">
+			<div class="wrap-input100 validate-input" data-validate="Enter password">
+				<label for="userPass"></label>
+				<input type="password" id="userPass" name="userPass" class="input100" placeholder="Password">
+				<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 			</div>
-			<div>
-				<button type="submit">로그인</button>
-				<button id="registerBtn" type="button">회원가입</button>
+			<div class="container-login100-form-btn m-t-32">
+				<button type="submit" class="login100-form-btn">Login</button>
+				<button id="registerBtn" type="button" class="login100-form-btn">Sign Up</button>
 			</div>
 		</c:if>
 		<c:if test="${member != null }">
@@ -62,6 +93,32 @@
 			<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
 		</c:if>
 	</form>
+		</div>
+	</div>	
+</div>	
+
+<!--  -->	
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="/resources/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/vendor/bootstrap/js/popper.js"></script>
+	<script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/resources/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/resources/js/main.js"></script>
+<!--  -->	
+	
+	
 </body>
 </html>
 

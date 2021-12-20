@@ -2,9 +2,10 @@ package ott.zerock.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import ott.zerock.domain.BoardVO;
 import ott.zerock.domain.Criteria;
-import ott.zerock.domain.ListVO;
 import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ReviewVO;
@@ -40,10 +41,16 @@ public interface MemberService {
 	//영화 목록
 	public List<MovieVO> getList(String userId);
 	
-//	//내가 쓴 게시글 페이징
-//	public List<BoardVO> myReviewWithPaging(String userId, Criteria cri);
-//	
-//	//내가 쓴 게시글 글 개수
-//	public int count(Criteria cri);	
+	//내가 쓴 게시글 페이징
+	public List<BoardVO> myReviewWithPaging(String userId, Criteria cri);
 	
+	//내가 쓴 게시글 글 개수
+	public int count(Criteria cri);	
+
+	//내가 쓴 영화 페이징
+	public List<MovieVO> getListWithPaging(@Param("userId")String userId,
+			@Param("cri")Criteria cri);
+	
+	//내가 쓴 영화글 글 개수
+	public int getListCount(Criteria cri);	
 }
