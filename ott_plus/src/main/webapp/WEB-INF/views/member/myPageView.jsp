@@ -37,7 +37,7 @@
 			location.href="/member/login";
 		})		
 		
-/* 		// 내가쓴글 버튼
+ 		// 내가쓴글 버튼
 		$("#myReviewBtn").on("click", function(){
 			location.href="/member/myReview";
 		})		
@@ -48,7 +48,7 @@
 			fromObj.attr("action", "/member/myMovie");
 			fromObj.submit();
 		})	 
-		*/	
+			
 	})
 </script>
 <body>
