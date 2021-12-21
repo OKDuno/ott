@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../includes/header.jsp" %>
 	<head>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -11,14 +10,20 @@
 	 	<!-- jQuery -->
 		<script src="/resources/vendor/jquery/jquery.min.js"></script>
 		<title>회원가입</title>
+		<style>
+		    .form-control{
+		        width:300px;
+		        margin:auto;
+		    }
+		</style>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			// 취소
+/* 			// 취소
 			$(".cencle").on("click", function(){
 				location.href = "/member/myPageView";
 				alert("취소하였습니다.")
-			})
+			}) */
 			
 		
 			$("#submit").on("click", function(){
@@ -61,25 +66,23 @@
 	<body>
 		<section id="container">
 			<form id="updateForm" action="/member/memberUpdate" method="post">
-				<div class="form-group has-feedback">
+				<div class="form-group has-feedback" style = "text-align: center">
 					<label class="control-label" for="userId">아이디</label>
 					<input class="form-control" type="text" id="userId" name="userId" value="${member.userId}" readonly="readonly"/>
 				</div>
-				<div class="form-group has-feedback">
+				<div class="form-group has-feedback" style = "text-align: center">
 					<label class="control-label" for="userPass">패스워드</label>
 					<input class="form-control" type="password" id="userPass" name="userPass" />
 				</div>
-				<div class="form-group has-feedback">
+				<div class="form-group has-feedback" style = "text-align: center">
 					<label class="control-label" for="userName">닉네임</label>
 					<input class="form-control" type="text" id="userName" name="userName" value="${member.userName}"/>
 				</div>
 			</form>
-				<div class="form-group has-feedback">
+				<div class="form-group has-feedback" style = "text-align: center">
 					<button class="btn btn-success" type="button" id="submit">닉네임변경</button>
-					<button class="cencle btn btn-danger" type="button">취소</button>
+					<!-- <button class="cencle btn btn-danger" type="button">취소</button> -->
 				</div>
 		</section>
 		
-	</body>
-	
-</html>
+<%@include file="../includes/footer.jsp" %>

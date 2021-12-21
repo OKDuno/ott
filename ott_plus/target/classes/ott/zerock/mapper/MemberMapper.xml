@@ -106,7 +106,7 @@
 		]]>
 	</select>
 	
-	<!-- 내가 등록한 게시글 개수-->
+	<!-- 내가 등록한 영화 개수-->
  	<select id="getListCount" resultType="int">
 		select count(*)
 		from movie

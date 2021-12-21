@@ -112,8 +112,10 @@ public class MemberController {
 	
 	// 마이페이지 폼으로 이동 get
 	@RequestMapping(value="/myPageView", method = RequestMethod.GET)
-	public void myPageView() throws Exception{
+	public void myPageView(Model model, Criteria cri) throws Exception{
 		log.info("마이페이지");
+		model.addAttribute("pageMaker", new PageDTO(cri,memberservice.count(cri)));
+		model.addAttribute("pageMakerMovie", new PageDTO(cri,memberservice.getListCount(cri)));
 	}	
 	
 	// 회원정보 수정 get
