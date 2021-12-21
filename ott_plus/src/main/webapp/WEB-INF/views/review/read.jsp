@@ -1,47 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ include file="../includes/header.jsp" %>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">영화 드라마 추천게시판</h6>
+    <ul>
+      <li><a href="/ott/main">Home</a></li>
+      <li><a href="/review/title">Table</a></li>
+      <li><a href="/review/title">영화 드라마 추천게시판</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<!-- jQuery -->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
-
-
+<div class="wrapper row3">
+<main class="hoc container clear"> 
+<div class="content">
+<div id="comments">
 <form id="actionForm" action="modify"  method="get">
-<div class="form-group">
-	<label>제목</label>
-	<input class="form-control" value="${review.rev_title}"
-	name="rev_title" readonly>
+          <div class="one_third first">
+            <label for="name">제목 <span>*</span></label>
+            <input size="22" class="form-control" value="${review.rev_title}"
+				name="rev_title" readonly>
+          </div>
+          <div class="one_third">
+            <label for="url">작성자</label>
+            <input size="22" class="form-control" value="${review.rev_teg}"
+    			name="rev_teg" readonly>
+          </div>
+          <div class="block clear">
+            <label for="comment">내용</label>
+            <textarea cols="25" rows="10"
+            class="form-control" name="rev_content" readonly>${review.rev_content}</textarea>
+          </div>
+        <input type="hidden" id="rev_bno" name="rev_bno" value='<c:out value="${review.rev_bno}"/>'>
+		<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+		<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
+        </form>
+    <c:if test="${review.rev_writer eq member.userId}">
+		<button data-oper="modify" class="btn btn-warning">수정</button>
+		<button data-oper="delete" class="btn btn-danger">삭제</button>
+	</c:if>
+		<button data-oper="title" class="btn btn-primary">목록</button>
 </div>
-<div class="form-group">
-    <label>태그</label>
-    <input class="form-control" value="${review.rev_teg}"
-    name="rev_teg" readonly>
 </div>
-<div class="form-group">
-    <label>내용</label>
-    <textarea class="form-control" rows="3"
-     name="rev_content" readonly>${review.rev_content}</textarea>
+</main>
 </div>
 
-<input type="hidden" id="rev_bno" name="rev_bno" value='<c:out value="${review.rev_bno}"/>'>
-<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
-<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
-
-</form>
-<c:if test="${review.rev_writer eq member.userId}">
-<button data-oper="modify" class="btn btn-warning">수정</button>
-<button data-oper="delete" class="btn btn-danger">삭제</button>
-</c:if>
-<button data-oper="title" class="btn btn-primary">목록</button>
-	
 <!-- 댓글 -->	
 <form name="replyForm" method="post">
   <input type="hidden" id="rev_bno" name="rev_bno" value="${review.rev_bno}" />

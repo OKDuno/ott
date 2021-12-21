@@ -1,8 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">요금제공유 & 자유게시판</h6>
+    <ul>
+      <li><a href="/ott/main">Home</a></li>
+      <li><a href="/review/title">Table</a></li>
+      <li><a href="/board/title">요금제공유 & 자유게시판</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+
+<div class="wrapper row3">
+<main class="hoc container clear"> 
+<div class="content">
+<div id="comments">
+<form id="actionForm" action="modify"  method="get">
+          <div class="one_third first">
+            <label for="name">제목 <span>*</span></label>
+            <input size="22" class="form-control" value="${board.title}"
+				name="title" readonly>
+          </div>
+          <div class="one_third">
+            <label for="url">작성자</label>
+            <input size="22" class="form-control" value="${board.teg}"
+    			name="teg" readonly>
+          </div>
+          <div class="block clear">
+            <label for="comment">내용</label>
+            <textarea cols="25" rows="10"
+            class="form-control" name="content" readonly>${board.content}</textarea>
+          </div>
+        <input type="hidden" id="bno" name="bno" value='<c:out value="${board.bno}"/>'>
+		<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+		<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
+        </form>
+    <c:if test="${board.writer eq member.userId}">
+		<button data-oper="modify" class="btn btn-warning">수정</button>
+		<button data-oper="delete" class="btn btn-danger">삭제</button>
+	</c:if>
+		<button data-oper="title" class="btn btn-primary">목록</button>
+</div>
+</div>
+</main>
+</div>
 
 
+<%-- 
 <form id="actionForm" action="modify"  method="get">
 <div class="form-group">
 	<label>제목</label>
@@ -29,7 +79,8 @@
 <button data-oper="delete" class="btn btn-danger">삭제</button>
 </c:if>
 <button data-oper="title" class="btn btn-primary">목록</button>
-	
+	 --%>
+	 
 <!-- 댓글 작성-->	
 <form name="replyForm" method="post">
   <input type="hidden" id="bno" name="bno" value="${board.bno}" />
@@ -128,5 +179,3 @@
 </script>
 
 <%@ include file="../includes/footer.jsp" %>  
-</body>
-</html>
