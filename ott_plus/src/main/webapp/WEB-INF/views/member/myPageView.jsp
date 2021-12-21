@@ -29,20 +29,23 @@
   </div>
 	<form name='homeForm' id="homeForm" method="get" action="/myPageView">
 	<c:if test="${member != null }">   
+	<br>
   <div class="listContainer">
-    <a class="item">
-        <div class="icon">ii</div>
-        <button id="memberUpdateBtn" type="button">닉네임변경</button><span class="circle"></span>
+    <a class="item" style="display:inline;">
+<!--         <div class="icon">ii</div> -->
+        <button class="btn btn- default" id="memberUpdateBtn" type="button">닉네임변경</button><span class="circle"></span>
     </a>
-    <a class="item">
-        <div class="icon">ii</div>
-        <button id="memberDeleteBtn" type="button">회원탈퇴</button>
+    <a class="item" style="display:inline;">
+<!--         <div class="icon">ii</div> -->
+        <button class="btn btn- default" id="memberDeleteBtn" type="button">회원탈퇴</button>
     </a>
-    <a class="item">
-        <div class="icon">ii</div>
-        <button id="logoutBtn" type="button">로그아웃</button>
+    <a class="item" style="display:inline;">
+<!--         <div class="icon">ii</div> -->
+        <button class="btn btn- default" id="logoutBtn" type="button">로그아웃</button>
     </a>
   </div>
+  <br>
+  <br>
     <input type="hidden" value="${member.userId}" />
 	</c:if>
 		<c:if test="${msg == false}">

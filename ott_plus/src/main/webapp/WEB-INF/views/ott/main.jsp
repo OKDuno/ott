@@ -71,11 +71,11 @@
               <li><a href="/board/title">공유 / 자유</a></li>
             </ul>
           </li>
-          <li><a class="drop" href="/member/myMovie?userId=${member.userId}">MyPage</a>
+          <li><a class="drop" href="/member/myPageView?userId=${member.userId}">MyPage</a>
           	<ul>
+          	  <li><a href="/member/myPageView?userId=${member.userId}">마이페이지 설정</a></li>
               <li><a href="/member/myMovie?userId=${member.userId}">내가 본 작품</a></li>
               <li><a href="/member/myReview?userId=${member.userId}">내가 쓴 글</a></li>
-              <li><a href="/member/myPageView?userId=${member.userId}">회원정보수정</a></li>
             </ul>
           </li>
         </ul>
