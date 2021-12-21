@@ -33,7 +33,7 @@
       <div class="fl_right"> 
         <!-- ################################################################################################ -->
         <ul class="nospace">
-          <li><a href="/ott/main"><i class="fas fa-home"></i></a></li>
+          <li><a href="/ott/main?userId=${member.userId}"><i class="fas fa-home"></i></a></li>
           <li><c:if test="${member != null}"><a href="/member/logout" title="Logout"><i class="fas fa-sign-out-alt"></i></a></c:if></li>
           <li><c:if test="${member == null}"><a href="/member/login" title="Login"><i class="fas fa-sign-in-alt"></i></a></c:if></li>
 		  <li><c:if test="${member == null}"><a href="/member/register" title="Sign Up"><i class="fas fa-edit"></i></a></c:if></li>
@@ -50,12 +50,12 @@
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="/ott/main">OTT Plus</a></h1>
+        <h1><a href="/ott/main?userId=${member.userId}">OTT Plus</a></h1>
       </div>
       <!-- ################################################################################################ -->
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="/ott/main">Home</a></li>
+          <li class="active"><a href="/ott/main?userId=${member.userId}">Home</a></li>
           <li><a class="drop" href="/ott/netflix_list">TOP10</a>
             <ul>
               <li><a href="/ott/netflix_list">Netflix</a></li>
