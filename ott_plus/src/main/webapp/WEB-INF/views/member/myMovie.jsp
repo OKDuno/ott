@@ -22,15 +22,19 @@
     <!-- ################################################################################################ -->
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1><b>내가 본 영화</b></h1>
+      <h1><b>내가 본 영화</b></h1> 
       <div class="scrollable">
+      <form action ="/member/myMovieDelete" method="get">
+      <input type="hidden" name="userId" id="userId" value="${member.userId}">
         <table>
           <thead>
             <tr>
+              <th> </th>
               <th>제목</th>
               <th>장르</th>
               <th>주연배우</th>
               <th>평점</th>
+              
             </tr>
           </thead>
           <!-- <button id="regBtn" class="btn btn-xs pull-right">게시글 등록</button> -->
@@ -39,17 +43,21 @@
 				<c:forEach items="${movie}" var="list">
 				
 					<tr>
-				    	<td><c:out value="${list.movie_title}" /></td>
+						<td><input style="display:inline;" type="checkbox" name="movie_title" id="movie_title" value="${list.movie_title}"></td>
+				    	<td>${list.movie_title}</td>
 						<td><c:out value="${list.movie_genre}" /></td>
 						<td><c:out value="${list.movie_actor}" /></td>
 						<td><c:out value="${list.movie_grade}" /></td>
-<%-- 						<td>${member.userId}</td> --%>
+						
 					</tr>
 				</c:forEach>
 			
 			</tbody>
         </table>
+        <input type="submit" value="삭제">
+       </form>
       </div>
+      <br>
       <c:if test="${member != null}">
 			    <form action="/member/myMovieInsert" method="get">
 		        	<table>
@@ -61,6 +69,7 @@
 			        	</tr>
 		        	</table>
 				</form>
+				
 			</c:if>
       <ul class="pagination">
 		<!-- 페이징 처리부분 -->

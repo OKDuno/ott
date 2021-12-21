@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -207,6 +208,13 @@ public class MemberController {
 		s_service.input(input);
 		
 		return "redirect:/member/myMovie?userId="+input.getUserId();
+	}
+	
+	@GetMapping("/myMovieDelete")
+	public String myMovieDelete(@Param("movie_title")String movie_title, @Param("userId")String userId) throws Exception {
+		log.info("drop movie...."+userId);
+		s_service.drop(movie_title,userId);
+		return "redirect:/member/myMovie?userId="+userId;
 	}
 	
 	

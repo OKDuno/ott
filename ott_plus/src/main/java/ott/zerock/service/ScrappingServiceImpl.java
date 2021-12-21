@@ -78,10 +78,11 @@ public class ScrappingServiceImpl implements ScrappingService {
 		String s;
 		Process oProcess;
 		
-		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\PythonMovie.py",title).start();
+		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\PythonMovie.py").start();
+		//oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/PythonMovie.py",title).start();
 		
-		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"MS949"));
-    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"MS949"));
+		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
+    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
     	while ((s = stdOut.readLine()) != null) {
     		if (cnt==0) {
     			map.put("title", s);
@@ -121,9 +122,9 @@ public class ScrappingServiceImpl implements ScrappingService {
 		String s="";
 		
 		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\Recommend.py").start();
-		
-		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"MS949"));
-    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"MS949"));
+		//oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend.py").start();
+		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"ms949"));
+    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"ms949"));
     	while ((s = stdOut.readLine()) != null) {
     		
     		if (cnt==0) {
@@ -145,6 +146,12 @@ public class ScrappingServiceImpl implements ScrappingService {
 		
     	
 		return list;
+	}
+
+	@Override
+	public void drop(String movie_title, String userId) {
+		// TODO Auto-generated method stub
+		mapper.drop(movie_title,userId);
 	}
 
 

@@ -3,9 +3,10 @@ package ott.zerock.service;
 import java.util.List;
 import java.util.Map;
 
-import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
+
+
 
 public interface ScrappingService {
 	//넷플릭스 영화 데이터 조회
@@ -37,6 +38,9 @@ public interface ScrappingService {
 	
 	//내가 본 작품(제목, 장르, 배우, 평점) 등록
 	public void input(MovieVO input);
+	
+	//내가 본 작품 삭제
+	public void drop(String movie_title, String userId);
 	
 	//내가 본 작품(제목, 장르, 배우, 평점) 리스트
 	public List<MovieVO> inputList();
