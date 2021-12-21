@@ -112,21 +112,21 @@
     
       <li class="one_third first">
         <figure><img src="${recomlist[1]}" alt="">
-          <figcaption><em>01</em> <a href="#">Title 1 : ${recomlist[0]}</a></figcaption>
+          <figcaption><em>01</em> <a href="#">${recomlist[0]}</a></figcaption>
         </figure>
       </li>
       <li class="one_third">
         <figure><img src="${recomlist[3]}" alt="">
-          <figcaption><em>02</em> <a href="#">Title 2 : ${recomlist[2]}</a></figcaption>
+          <figcaption><em>02</em> <a href="#">${recomlist[2]}</a></figcaption>
         </figure>
       </li>
       <li class="one_third">
         <figure><img src="${recomlist[5]}" alt="">
-          <figcaption><em>03</em> <a href="#">Title 3 : ${recomlist[4]}</a></figcaption>
+          <figcaption><em>03</em> <a href="#">${recomlist[4]}</a></figcaption>
         </figure>
       </li>
     </ul>
-    <footer class="center"><a class="btn" href="#">~~~~바로가기</a></footer>
+    <footer class="center"><a class="btn" href="member/myMovie?userId=${member.userId}">내가 본 영화 바로가기</a></footer>
     <!-- ################################################################################################ -->
   </article>
 </div>
@@ -138,15 +138,15 @@
     <!-- ################################################################################################ -->
     <div class="two_third">
       <h6 class="heading underline font-x2">공지사항</h6>
-      <p class="btmspace-50">Eu tortor bibendum est faucibus gravida donec velit lacus blandit ultricies placerat a pharetra a nulla pellentesque sit donec scelerisque etiam et tellus eget urna.</p>
+      <p class="btmspace-50">Netflix, DisneyPlus, HBO, Amazon 세계 스트리밍 TOP10 제공, 추천/리뷰/요금제공유 게시판을 통해 이용자끼리 서로 원하는 정보 공유, 내가 본 영화를 기반으로 영화 추천 서비스 제공</p>
       <article><a href="#"><i class="fas fa-flag-checkered"></i></a>
-        <h6 class="heading">Turpis nulla id nisl</h6>
-        <p>Suspendisse fermentum purus commodo ultricies adipiscing augue ante facilisis dolor eget varius justo elit sit amet leo vivamus suspendisse&hellip;</p>
-        <footer><a href="#">Read More &raquo;</a></footer>
+        <h6 class="heading">OTT별 작품 추천/리뷰/요금제공유 게시판</h6>
+        <p>Netflix, DisneyPlus, HBO, Amazon 총 4개의 태그를 이용해서 게시판에 글을 쓰고 OTT별로 서로 원하는 정보를 공유하며&hellip;</p>
+        <footer><a href="/review/title">Read More &raquo;</a></footer>
       </article>
       <article><a href="#"><i class="fas fa-recycle"></i></a>
-        <h6 class="heading">Scelerisque pellentesque</h6>
-        <p>Sed leo duis adipiscing ligula eget risus curabitur id quam a odio malesuada euismod mauris faucibus aliquet urna vivamus et libero duis sed&hellip;</p>
+        <h6 class="heading">영화 추천 서비스</h6>
+        <p>로그인 후 내가 본 영화를 등록하고 평점이 높은 영화와 비슷한 작품 TOP3를 추천하여 제공&hellip;</p>
         <footer><a href="#">Read More &raquo;</a></footer>
       </article>
     </div>
@@ -164,77 +164,18 @@
       <h6 class="heading">Besloor</h6>
       <nav>
         <ul class="nospace inline pushright uppercase">
-          <li><a href="index.html"><i class="fas fa-lg fa-home"></i></a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Cookies</a></li>
-          <li><a href="#">Disclaimer</a></li>
+          <li><a href="/ott/main"><i class="fas fa-lg fa-home"></i></a></li>
+          <li><a href="/ott/netflix_list">Netflix TOP 10</a></li>
+          <li><a href="/ott/disney_list">DisneyPlus TOP 10</a></li>
+          <li><a href="/ott/hbo_list">HBO TOP 10</a></li>
+          <li><a href="/ott/amazon_list">Amazon TOP 10</a></li>
+          <li><a href="/review/title">추천/리뷰 게시판</a></li>
+          <li><a href="/board/title">자유/공유 게시판</a></li>
         </ul>
       </nav>
     </div>
     <!-- ################################################################################################ -->
-    <hr class="btmspace-50">
-    <!-- ################################################################################################ -->
-    <div class="group">
-      <div class="one_quarter first">
-        <h6 class="heading">Ligula aenean id odio</h6>
-        <ul class="nospace btmspace-30 linklist contact">
-          <li><i class="fas fa-map-marker-alt"></i>
-            <address>
-            Street Name &amp; Number, Town, Postcode/Zip
-            </address>
-          </li>
-          <li><i class="fas fa-phone"></i> +00 (123) 456 7890</li>
-          <li><i class="far fa-envelope"></i> info@domain.com</li>
-        </ul>
-        <ul class="faico clear">
-          <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-          <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
-        </ul>
-      </div>
-      <div class="one_quarter">
-        <h6 class="heading">Vivamus risus maecenas</h6>
-        <p class="nospace btmspace-15">Nunc urna porttitor eget molestie a consequat at lectus donec sollicitudin.</p>
-        <form method="post" action="#">
-          <fieldset>
-            <legend>Newsletter:</legend>
-            <input class="btmspace-15" type="text" value="" placeholder="Name">
-            <input class="btmspace-15" type="text" value="" placeholder="Email">
-            <button type="submit" value="submit">Submit</button>
-          </fieldset>
-        </form>
-      </div>
-      <div class="one_quarter">
-        <h6 class="heading">Dictum sit amet tortor</h6>
-        <ul class="nospace linklist">
-          <li><a href="#">Est a orci donec eleifend</a></li>
-          <li><a href="#">Dignissim erat proin diam</a></li>
-          <li><a href="#">Aenean vehicula augue</a></li>
-          <li><a href="#">Et neque sed ligula nisl</a></li>
-          <li><a href="#">Dictum quis tempus eu</a></li>
-        </ul>
-      </div>
-      <div class="one_quarter">
-        <h6 class="heading">Proin tincidunt venenatis</h6>
-        <ul class="nospace clear latestimg">
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-          <li><a class="imgover" href="#"><img src="/resources/images/demo/100x100.png" alt=""></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- ################################################################################################ -->
+
   </footer>
 </div>
 <!-- ################################################################################################ -->

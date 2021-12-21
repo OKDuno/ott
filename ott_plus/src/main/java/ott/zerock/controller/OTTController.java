@@ -28,7 +28,7 @@ public class OTTController {
 	
 	@RequestMapping("main")
 	public void main(Model model, @Param("userId")String userId) throws Exception {
-		if(userId==null)
+		if(userId==null || userId=="")
 			model.addAttribute("recomlist", s_service.recommend());
 		else
 			model.addAttribute("recomlist", s_service.recommend_id(userId));

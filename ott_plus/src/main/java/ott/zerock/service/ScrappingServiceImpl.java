@@ -171,7 +171,7 @@ public class ScrappingServiceImpl implements ScrappingService {
 		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\Recommend_id.py",userId).start();
 		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"ms949"));
     	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"ms949"));
-//		oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend.py").start();
+//		oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend_id.py",userId).start();
 //		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
 //    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
     	while ((s = stdOut.readLine()) != null) {
