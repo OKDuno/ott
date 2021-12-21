@@ -44,6 +44,9 @@ public interface ScrappingService {
 	//내가 본 작품(제목, 장르, 배우, 평점) 리스트
 	public List<MovieVO> inputList();
 	
-	//작품 추천(영화)
+	//작품 추천(영화) userId X
 	public List<String> recommend() throws Exception;
+	
+	//작품 추천(영화) userId O
+	public List<String> recommend_id(String userId) throws Exception;
 }

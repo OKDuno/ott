@@ -1,14 +1,19 @@
 package ott.zerock.controller;
 
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ott.zerock.domain.MemberVO;
 import ott.zerock.domain.MovieVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import ott.zerock.service.MemberService;
 import ott.zerock.service.ScrappingService;
 
 import lombok.AllArgsConstructor;
@@ -22,9 +27,12 @@ public class OTTController {
 	private ScrappingService s_service;
 	
 	@RequestMapping("main")
-	public void main(Model model) throws Exception {
-		
-		model.addAttribute("recomlist", s_service.recommend());
+	public void main(Model model, @Param("userId")String userId) throws Exception {
+		if(userId==null)
+			model.addAttribute("recomlist", s_service.recommend());
+		else
+			model.addAttribute("recomlist", s_service.recommend_id(userId));
+		log.info("main화면..." + userId);
 	}
 
 	@RequestMapping("netflix_list")

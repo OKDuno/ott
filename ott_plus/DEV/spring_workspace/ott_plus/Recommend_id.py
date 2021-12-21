@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup 
 import cx_Oracle
+import sys
 
 dsn = cx_Oracle.makedsn("mit8.iptime.org",2315,"xe")
 conn=cx_Oracle.connect("ott","1234",dsn)
 cursor=conn.cursor()
 
-sql = "select movie_title from movie order by movie_grade"
+argv=sys.argv[1].lower()
+
+sql = "select movie_title from movie where userId=LOWER('"+argv+"') order by movie_grade"
 cursor.execute(sql)
 
 for i in cursor:

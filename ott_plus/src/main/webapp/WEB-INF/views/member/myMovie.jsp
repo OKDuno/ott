@@ -29,7 +29,7 @@
         <table>
           <thead>
             <tr>
-              <th> </th>
+              <c:if test="${member != null}"><th> </th></c:if>
               <th>제목</th>
               <th>장르</th>
               <th>주연배우</th>
@@ -43,7 +43,9 @@
 				<c:forEach items="${movie}" var="list">
 				
 					<tr>
+						<c:if test="${member != null}">
 						<td><input style="display:inline;" type="checkbox" name="movie_title" id="movie_title" value="${list.movie_title}"></td>
+						</c:if>
 				    	<td>${list.movie_title}</td>
 						<td><c:out value="${list.movie_genre}" /></td>
 						<td><c:out value="${list.movie_actor}" /></td>
@@ -54,7 +56,7 @@
 			
 			</tbody>
         </table>
-        <input type="submit" value="삭제">
+       <c:if test="${member != null}"><input type="submit" value="삭제"></c:if>
        </form>
       </div>
       <br>

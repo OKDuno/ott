@@ -10,6 +10,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
@@ -79,10 +80,12 @@ public class ScrappingServiceImpl implements ScrappingService {
 		Process oProcess;
 		
 		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\PythonMovie.py").start();
-		//oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/PythonMovie.py",title).start();
+		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"ms949"));
+    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"ms949"));
 		
-		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
-    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
+//    	oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/PythonMovie.py",title).start();
+//		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
+//    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
     	while ((s = stdOut.readLine()) != null) {
     		if (cnt==0) {
     			map.put("title", s);
@@ -122,9 +125,11 @@ public class ScrappingServiceImpl implements ScrappingService {
 		String s="";
 		
 		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\Recommend.py").start();
-		//oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend.py").start();
 		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"ms949"));
     	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"ms949"));
+//		oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend.py").start();
+//		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
+//    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
     	while ((s = stdOut.readLine()) != null) {
     		
     		if (cnt==0) {
@@ -152,6 +157,44 @@ public class ScrappingServiceImpl implements ScrappingService {
 	public void drop(String movie_title, String userId) {
 		// TODO Auto-generated method stub
 		mapper.drop(movie_title,userId);
+	}
+
+	@Override
+	public List<String> recommend_id(String userId) throws Exception {
+		List<String> list = new ArrayList<String>();
+		int cnt=0;
+		Process oProcess;
+		String s="";
+		
+		System.out.println(userId);
+		
+		oProcess =new ProcessBuilder("python","C:\\Users\\MIT1\\git\\ott\\ott_plus\\DEV\\spring_workspace\\ott_plus\\Recommend_id.py",userId).start();
+		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"ms949"));
+    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"ms949"));
+//		oProcess =new ProcessBuilder("python3","/opt/tomcat/webapps/ROOT/Recommend.py").start();
+//		BufferedReader stdOut   = new BufferedReader(new InputStreamReader(oProcess.getInputStream(),"utf-8"));
+//    	BufferedReader stdError = new BufferedReader(new InputStreamReader(oProcess.getErrorStream(),"utf-8"));
+    	while ((s = stdOut.readLine()) != null) {
+    		
+    		if (cnt==0) {
+    			//map.put("title", s);
+    			cnt++;
+    			list.add(s);
+
+    		} else {
+    			//map.put("img", s);
+    			cnt=0;
+    			list.add(s);
+
+    		}
+    		
+    		//System.out.println(list);
+    	}
+    	while ((s = stdError.readLine()) != null) 
+    		System.err.println(s);
+		
+    	
+		return list;
 	}
 
 
