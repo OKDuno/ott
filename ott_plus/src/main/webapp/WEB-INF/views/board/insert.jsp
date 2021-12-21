@@ -70,5 +70,6 @@
     <button type="reset" class="btn btn-default">다시작성</button>
 </form>
  --%>
+ <%@ include file="../includes/footer.jsp" %> 
 </body>
 </html>
