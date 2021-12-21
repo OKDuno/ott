@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
+
+
 
 
 public interface ScrappingMapper {

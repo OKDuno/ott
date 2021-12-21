@@ -3,9 +3,10 @@ package ott.zerock.service;
 import java.util.List;
 import java.util.Map;
 
-import ott.zerock.domain.InputVO;
 import ott.zerock.domain.MovieVO;
 import ott.zerock.domain.ScrappingVO;
+
+
 
 public interface ScrappingService {
 	//넷플릭스 영화 데이터 조회
