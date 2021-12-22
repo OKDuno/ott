@@ -28,6 +28,9 @@
 ## **시스템 구성도**
 ![시스템구성도](https://user-images.githubusercontent.com/95264165/147017320-f29f33a6-5f28-4390-9061-0cff85168cf0.JPG)
 
+## **유스케이스**
+![OTT](https://user-images.githubusercontent.com/95264165/147019020-c4d7f5eb-3fde-438e-bc4e-7dcb847b0265.png)
+
 ## **예시 화면**
 **메인화면**
 ![메인화면](https://user-images.githubusercontent.com/95264165/147018400-75d140d4-e879-4211-bc11-5dbe3bb52041.JPG)
