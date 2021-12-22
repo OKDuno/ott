@@ -16,7 +16,7 @@
 + 시청 등록한 영화를 바탕으로 다른 작품들을 추천하여 메인화면에 출력할 수 있다.
 
 ## **개발 시간**
-
+![개발일정](https://user-images.githubusercontent.com/95264165/147016831-6b97b291-4a58-4f21-923d-7d7a02dbc7d6.JPG)
 
 ## **개발 환경**
 + Spring Tool Suite 3 3.9.15 release
