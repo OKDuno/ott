@@ -56,6 +56,10 @@
 ![마이페이지 화면](https://user-images.githubusercontent.com/95264165/147018399-a5712d15-f2c9-4817-9ae7-f6479972a2e5.JPG)
 
 
+**TOP10 화면**
+![TOP10 화면](https://user-images.githubusercontent.com/95264165/147019148-b3746047-e52a-4e93-8919-6f0c354d2134.JPG)
+
+
 
 **게시판 화면**
 ![게시판 화면](https://user-images.githubusercontent.com/95264165/147018407-7ecef6ab-e4e4-440c-9d92-016d07a49da9.JPG)
