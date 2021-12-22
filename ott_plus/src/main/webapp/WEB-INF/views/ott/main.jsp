@@ -126,7 +126,7 @@
         </figure>
       </li>
     </ul>
-    <footer class="center"><a class="btn" href="member/myMovie?userId=${member.userId}">내가 본 영화 바로가기</a></footer>
+    <footer class="center"><a class="btn" href="/member/myMovie?userId=${member.userId}">내가 본 영화 바로가기</a></footer>
     <!-- ################################################################################################ -->
   </article>
 </div>

@@ -56,7 +56,7 @@
 			
 			</tbody>
         </table>
-       <c:if test="${member != null}"><input type="submit" value="삭제"></c:if>
+       <c:if test="${member != null}"><input class="btn btn- default" type="submit" value="삭제"></c:if>
        </form>
       </div>
       <br>
@@ -67,7 +67,7 @@
 			        		<td colspan="3">영화작품 평점 등록</td>
 			        	</tr>
 			        	<tr>
-			        		<td colspan="3">제목 : <input style="display:inline;" type="text" name="title"> <button style="display:inline;" type="submit" name="확인" >확인</button></td>
+			        		<td colspan="3">제목 : <input style="display:inline;" type="text" name="title"> <button style="display:inline;" class="btn btn- default" type="submit" name="확인" >확인</button></td>
 			        	</tr>
 		        	</table>
 				</form>
