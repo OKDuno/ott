@@ -15,12 +15,17 @@
 + 마이페이지에서 내가 등록한 모든 게시물들을 확인할 수 있다.
 + 시청 등록한 영화를 바탕으로 다른 작품들을 추천하여 메인화면에 출력할 수 있다.
 
-## **개발 시간**
-![개발일정](https://user-images.githubusercontent.com/95264165/147016831-6b97b291-4a58-4f21-923d-7d7a02dbc7d6.JPG)
+## **개발 시간 (12월 3주)**
+![개발일정](https://user-images.githubusercontent.com/95264165/147017206-550352f5-2ca8-4a2d-a325-a61d74bde124.JPG)
 
 ## **개발 환경**
 + Spring Tool Suite 3 3.9.15 release
 + Visual studio code 1.62.3 (python 웹크롤링)
 + 아파치 tomcat 9.0
 + Oracle DB 20.4.1.407
-+ 
++ JavaSE-1.8
+
+## **시스템 구성도**
+![시스템구성도](https://user-images.githubusercontent.com/95264165/147017320-f29f33a6-5f28-4390-9061-0cff85168cf0.JPG)
+
+
