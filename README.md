@@ -19,18 +19,32 @@
 ![개발일정](https://user-images.githubusercontent.com/95264165/147017206-550352f5-2ca8-4a2d-a325-a61d74bde124.JPG)
 
 ## **개발 환경**
++ 윈도우 10
 + Spring Tool Suite 3 3.9.15 release
 + Visual studio code 1.62.3
 + Python 3.8.1
 + 아파치 tomcat 9.0
-+ Oracle DB 20.4.1.407
++ Oracle SQL Developer 20.4.1.407
++ Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 + JavaSE-1.8
+
+## **운영 환경**
++ ubuntu 18.0.4 lts server
++ openjdk 11.0.13
++ Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
++ Python 3.6.9
+
+## **ER다이어그램**
+![ER다이어그램](https://user-images.githubusercontent.com/95264165/147023804-c5a68e1b-824b-45c8-aaf5-38d68c93e3d9.JPG)
+
 
 ## **시스템 구성도**
 ![시스템구성도](https://user-images.githubusercontent.com/95264165/147017320-f29f33a6-5f28-4390-9061-0cff85168cf0.JPG)
 
+
 ## **유스케이스**
 ![OTT](https://user-images.githubusercontent.com/95264165/147019020-c4d7f5eb-3fde-438e-bc4e-7dcb847b0265.png)
+
 
 ## **예시 화면**
 **메인화면**
