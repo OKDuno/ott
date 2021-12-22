@@ -25,7 +25,7 @@
 		SELECT USERID, USERPASS, USERNAME
 		  FROM MP_MEMBER
 		 WHERE USERID = #{userId}
-		 <!--  AND USERPASS = #{userPass} -->
+		   AND USERPASS = #{userPass}
 	</select>
 	
 	<!-- 회원정보 수정 -->

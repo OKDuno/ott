@@ -76,6 +76,7 @@
 				<button type="submit" class="login100-form-btn">Login</button>
 				<button id="registerBtn" type="button" class="login100-form-btn">Sign Up</button>
 			</div>
+			<p align="center" style="color:#DCDCDC">테스트 계정은 dla / 123 입니다.</p>
 		</c:if>
 		<c:if test="${member != null }">
 			<div>
