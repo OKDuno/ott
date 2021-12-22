@@ -28,7 +28,7 @@
 				name="rev_title" readonly>
           </div>
           <div class="one_third">
-            <label for="url">작성자</label>
+            <label for="url">작성자<span>*</span></label>
             <input size="22" class="form-control" value="${review.rev_teg}"
     			name="rev_teg" readonly>
           </div>
@@ -52,30 +52,28 @@
 </div>
 
 <!-- 댓글 -->	
+<div class="wrapper row3">
+<main class="hoc container clear"> 
+<div class="content">
+<div id="comments">
 <form name="replyForm" method="post">
-  <input type="hidden" id="rev_bno" name="rev_bno" value="${review.rev_bno}" />
-  <input type="hidden" id="PageNum" name="PageNum" value="${cri.pageNum}"> 
-  <input type="hidden" id="amount" name="amount" value="${cri.amount}"> 
-
-  <div>
-    <label for="rev_replyer">댓글 작성자</label><input type="text" id="rev_replyer" name="rev_replyer"
-    value= "${member.userId}" readonly="readonly" />
-    <br/>
-    <label for="rev_repley">댓글 내용</label><input type="text" id="rev_reply" name="rev_reply" />
-  </div>
-  <div>
-  	<c:if test="${member != null}">
- 	 <button type="button" class="replyWriteBtn">작성</button>
- 	</c:if>
-  </div>
+	<input type="hidden" id="rev_bno" name="rev_bno" value="${review.rev_bno}" />
+	<input type="hidden" id="PageNum" name="PageNum" value="${cri.pageNum}"> 
+	<input type="hidden" id="amount" name="amount" value="${cri.amount}"> 
+	<div>
+    	<label for="rev_replyer">댓글 작성자</label>
+    	<input type="text" id="rev_replyer" name="rev_replyer"
+    	value= "${member.userId}" readonly="readonly" />
+    	<br/>
+    	<label for="rev_repley">댓글 내용</label><textarea id="rev_reply" name="rev_reply" cols="5" rows="5"></textarea>
+  	</div>
+  	<div>
+  		<c:if test="${member != null}">
+ 	 		<button type="button" id="replyWriteBtn" class="btn btn- default">작성</button>
+ 		</c:if>
+  	</div>
 </form>
-
-
-
-
-
-
-<!-- 댓글 -->
+<!-- 댓글작성 -->
 <div id="reply">
   <ol class="replyList">
     <c:forEach items="${replyList}" var="replyList">
@@ -87,14 +85,64 @@
         <p>${replyList.rev_reply}</p>
         <div>
         <c:if test="${review.rev_writer eq member.userId}">
-		  <button type="button" class="replyUpdateBtn" data-rno="${replyList.rev_rno}">수정</button>
-		  <button type="button" class="replyDeleteBtn" data-rno="${replyList.rev_rno}">삭제</button>
+		  <button type="button" id="replyUpdateBtn" class="btn btn- default" data-rno="${replyList.rev_rno}">수정</button>
+		  <button type="button" id="replyDeleteBtn" class="btn btn- default" data-rno="${replyList.rev_rno}">삭제</button>
 		</c:if>  
 		</div>
       </li>
     </c:forEach>   
   </ol>
 </div>
+
+</div>
+</div>
+</main>
+</div>
+
+<!-- <!-- 댓글 -->
+<!-- <form name="replyForm" method="post"> -->
+<%--   <input type="hidden" id="rev_bno" name="rev_bno" value="${review.rev_bno}" /> --%>
+<%--   <input type="hidden" id="PageNum" name="PageNum" value="${cri.pageNum}">  --%>
+<%--   <input type="hidden" id="amount" name="amount" value="${cri.amount}">  --%>
+
+<!--   <div> -->
+<!--     <label for="rev_replyer">댓글 작성자</label><input type="text" id="rev_replyer" name="rev_replyer" -->
+<%--     value= "${member.userId}" readonly="readonly" /> --%>
+<!--     <br/> -->
+<!--     <label for="rev_repley">댓글 내용</label><input type="text" id="rev_reply" name="rev_reply" /> -->
+<!--   </div> -->
+<!--   <div> -->
+<%--   	<c:if test="${member != null}"> --%>
+<!--  	 <button type="button" class="replyWriteBtn">작성</button> -->
+<%--  	</c:if> --%>
+<!--   </div> -->
+<!-- </form> -->
+
+
+
+
+
+
+<!-- <!-- 댓글 -->
+<!-- <div id="reply"> -->
+<!--   <ol class="replyList"> -->
+<%--     <c:forEach items="${replyList}" var="replyList"> --%>
+<!--       <li> -->
+<!--         <p> -->
+<%--         작성자 : ${replyList.rev_replyer}<br /> --%>
+<%--         작성 날짜 :  <fmt:formatDate value="${replyList.rev_replydate}" pattern="yyyy-MM-dd" /> --%>
+<!--         </p> -->
+<%--         <p>${replyList.rev_reply}</p> --%>
+<!--         <div> -->
+<%--         <c:if test="${review.rev_writer eq member.userId}"> --%>
+<%-- 		  <button type="button" class="replyUpdateBtn" data-rno="${replyList.rev_rno}">수정</button> --%>
+<%-- 		  <button type="button" class="replyDeleteBtn" data-rno="${replyList.rev_rno}">삭제</button> --%>
+<%-- 		</c:if>   --%>
+<!-- 		</div> -->
+<!--       </li> -->
+<%--     </c:forEach>    --%>
+<!--   </ol> -->
+<!-- </div> -->
 
 
 
@@ -123,7 +171,7 @@
 		
 	});
 	//댓글 작성
-	$(".replyWriteBtn").on("click", function(){
+	$("#replyWriteBtn").on("click", function(){
 		
 		var formObj = $("form[name='replyForm']");
 		formObj.attr("action", "/reviewreplyWrite").attr("method","post");
@@ -131,7 +179,7 @@
 	});
 	
 	//댓글 수정 View
-	$(".replyUpdateBtn").on("click", function(){
+	$("#replyUpdateBtn").on("click", function(){
 		location.href = "/review/replyUpdateView?rev_bno=${review.rev_bno}"
 						+ "&pageNum=${cri.pageNum}"
 						+ "&amount=${cri.amount}"
@@ -139,7 +187,7 @@
 	});
 
 	//댓글 삭제 View
-	$(".replyDeleteBtn").on("click", function(){
+	$("#replyDeleteBtn").on("click", function(){
 		location.href = "/review/replyDeleteView?rev_bno=${review.rev_bno}"
 			+ "&pageNum=${cri.pageNum}"
 			+ "&amount=${cri.amount}"
@@ -149,10 +197,4 @@
 </script>
 
 
-
-
-
-
-
-</body>
-</html>
+<%@ include file="../includes/footer.jsp" %> 
