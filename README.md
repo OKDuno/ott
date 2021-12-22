@@ -23,13 +23,14 @@
 + Spring Tool Suite 3 3.9.15 release
 + Visual studio code 1.62.3
 + Python 3.8.1
-+ 아파치 tomcat 9.0
++ apache tomcat 9.0
 + Oracle SQL Developer 20.4.1.407
 + Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 + JavaSE-1.8
 
 ## **운영 환경**
 + ubuntu 18.0.4 lts server
++ apache tomcat 9.0
 + openjdk 11.0.13
 + Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 + Python 3.6.9
