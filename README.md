@@ -28,4 +28,35 @@
 ## **시스템 구성도**
 ![시스템구성도](https://user-images.githubusercontent.com/95264165/147017320-f29f33a6-5f28-4390-9061-0cff85168cf0.JPG)
 
+## **예시 화면**
+**메인화면**
+![메인화면](https://user-images.githubusercontent.com/95264165/147018400-75d140d4-e879-4211-bc11-5dbe3bb52041.JPG)
+
+
+**영화 추천 화면**
+![추천화면](https://user-images.githubusercontent.com/95264165/147018404-b469d9f1-9bf9-4aaf-afb9-921f9ff32770.JPG)
+
+
+**로그인화면**
+![로그인화면](https://user-images.githubusercontent.com/95264165/147018396-2ab00629-d30c-4fc2-ad37-0725045761c5.JPG)
+
+
+**회원가입화면**
+![회원가입 화면](https://user-images.githubusercontent.com/95264165/147018406-a3874e0c-e545-41a5-aba2-a469e0f1879e.JPG)
+
+
+**마이페이지 화면**
+![마이페이지 화면](https://user-images.githubusercontent.com/95264165/147018399-a5712d15-f2c9-4817-9ae7-f6479972a2e5.JPG)
+
+
+**게시판 화면**
+![게시판 화면](https://user-images.githubusercontent.com/95264165/147018407-7ecef6ab-e4e4-440c-9d92-016d07a49da9.JPG)
+
+
+**내가 본 영화 등록 화면**
+![내가 본 영화 화면](https://user-images.githubusercontent.com/95264165/147018408-b1562a45-c39b-448e-a7aa-5728543efd67.JPG)
+
+
+**내가 쓴 글 확인 화면**
+![내가 쓴 글 화면](https://user-images.githubusercontent.com/95264165/147018411-638dfd83-18bd-4ce9-8c2e-7eb9a324a183.JPG)
 
