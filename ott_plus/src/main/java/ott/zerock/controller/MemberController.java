@@ -93,8 +93,15 @@ public class MemberController {
 			session.setAttribute("member", login);
 			
 		}
-		
-		return "redirect:/ott/main"+"?userId="+login.getUserId();
+		if(login==null)
+			return "redirect:/member/login_error";
+		else
+			return "redirect:/ott/main"+"?userId="+login.getUserId();
+	}
+	
+	@RequestMapping(value = "/login_error", method = RequestMethod.GET)
+	public void login_error() throws Exception{
+		log.info("get login_error");
 	}
 	
 	

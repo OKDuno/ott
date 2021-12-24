@@ -17,9 +17,9 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 <!--  		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.64:1521:xe"></property> -->
  		<!-- 리눅스 DB 서버 -->
-<!--  		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.21:1521:xe"></property> -->
+ 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@192.168.0.21:1521:xe"></property>
 		<!-- 개발컴퓨터에서 db서버 접속 시 -->
-		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@mit8.iptime.org:2315:xe"></property>
+<!-- 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@mit8.iptime.org:2315:xe"></property> -->
 		<property name="username" value="ott"></property>
 		<property name="password" value="1234"></property>
 	</bean>	

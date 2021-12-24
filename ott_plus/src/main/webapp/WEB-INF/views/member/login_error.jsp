@@ -61,9 +61,9 @@
 				Account Login
 			</span>
 	<form name='homeForm' method="post" action="/member/login" class="login100-form validate-form p-b-33 p-t-5">
-		<c:if test="${msg == false}">
-			<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
-		</c:if>
+
+		<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
+
 		<c:if test="${member == null}">
 			<div class="wrap-input100 validate-input" data-validate = "Enter username">
 				<label for="userId"></label>
@@ -80,16 +80,7 @@
 				<button id="registerBtn" type="button" class="login100-form-btn">Sign Up</button>
 			</div>
 			<p align="center" style="color:#DCDCDC">테스트 계정은 dla / 123 입니다.</p>
-		</c:if>
-		<c:if test="${member != null }">
-			<div>
-				<p>아이디 "${member.userId}"님 환영 합니다.</p>
-				<p>회원님의 닉네임은 "${member.userName}" 입니다.</p>
-				<button id="myPageBtn" type="button">마이페이지</button>
-				<button id="logoutBtn" type="button">로그아웃</button>
-			</div>
-		</c:if>
-		
+		</c:if>	
 	</form>
 		</div>
 	</div>	
