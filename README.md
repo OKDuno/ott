@@ -1,6 +1,6 @@
 # **ott_plus**
 
-## **사이트 : http://mit8.iptime.org:2180/** 
+## **사이트 : http://mit8.iptime.org:2180/ (현재 서버 중지로 이용불가)** 
 
 ## **개요**
 + OTT별 작품 순위 확인 가능
